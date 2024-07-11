@@ -1,6 +1,6 @@
 package com.edu.vo;
 //Super Class...
-public class Employee {
+abstract public class Employee {
 	private int empId;
 	private String name;
 	private String addr;
