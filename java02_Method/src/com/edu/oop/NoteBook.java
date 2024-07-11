@@ -31,10 +31,11 @@ public class NoteBook {
 		this.price = price;
 			
 	}
+
 	// 주입된 값을 받아오는 것 : get, read, unpack
 	// 정수와 string이 concat 되면 string으로 변환되어 반환됨.
 	public String getNoteBookInfo() {
-		return serialNumber+ ", "+brand+", "+price;
+		return serialNumber+ ", "+brand+", "+price+"정보";
 	}
 	
 	//method 정의 (선언문 + 구현부)
