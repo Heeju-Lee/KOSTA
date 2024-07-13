@@ -40,9 +40,10 @@ public class BookMgrImpl implements BookMgr{
 	@Override
 	public ArrayList<Book> searchBookByTitle(String title) {
 		ArrayList<Book> temp = new ArrayList<>();
-		for(Book b: temp)
-			if(b.getTitle().equals(title))
+		for(Book b: books) {
+			if(b.getTitle().contains(title))
 				temp.add(b);
+		}
 		return temp;
 	}
 
@@ -52,57 +53,67 @@ public class BookMgrImpl implements BookMgr{
 		//
 		
 		return temp;
-	}//안해도돼~!~!
+	}//안해도 됨.
 
-//	@Override
-//	public ArrayList<Book> onlySearchMagazin() {
-//		ArrayList<Book> temp = new ArrayList<>();
-//		for(Book b:temp)
-//			if(b instanceof Magazine);
-//				temp = b.toString();			
-//			
-//			return temp;
-//	}
+	@Override
+	public ArrayList<Book> onlySearchMagazin() {
+		ArrayList<Book> temp = new ArrayList<>();
+		for(Book b: books) {
+			if(b instanceof Magazine)
+				temp.add((Magazine)b);	
+		}	
+		return temp;
+	}
 
 	@Override
 	public ArrayList<Book> magazineOfThisYearInfo(int year) {
 		ArrayList<Book> temp = new ArrayList<>();
-		//
-		
+		for(Book b : books) {
+			if(b instanceof Magazine && ((Magazine) b).getYear() == year)
+				temp.add(b);
+		}
+		if(temp.isEmpty())
+			System.out.println(year+"년에 발행된 잡지가 없습니다.");
 		return temp;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByPublish(String publish) {
 		ArrayList<Book> temp = new ArrayList<>();
-		//
-		
+		for(Book b : books) {
+			if(b.getPublisher().equals(publish))
+				temp.add(b);
+		}
+		if(temp.isEmpty())
+			System.out.println(publish+"에서 발행된 책이 없습니다.");
 		return temp;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByPrice(int price) {
 		ArrayList<Book> temp = new ArrayList<>();
-		//
-		
-		return temp;
+			for(Book b:books) {
+				if(b.getPrice()<=price)
+					temp.add(b);
+			}
+			if(temp.isEmpty())
+				System.out.println("0원~"+price+"원에 해당하는 책이 없습니다.");
+			return temp;
 	}
 
 	@Override
 	public int getTotalPrice() {
 		int total = 0;
-//		for(Book b )
-//		
-		return total;
+		for(Book b:books) {
+			total+=b.getPrice();
+		}
+	return total;
 	}
 	@Override
 	public int getAvgPrice() {		
-		//
-		return 0;
+		int average =0;
+		average=getTotalPrice()/books.size();
+		return average;
 	}
-	@Override
-	public ArrayList<Book> onlySearchMagazin() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

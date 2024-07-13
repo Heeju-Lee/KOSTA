@@ -100,7 +100,6 @@ public class BookTest {
 				String name2 = sc.next();
 				ArrayList<Book> returnList=mgr.searchBookByTitle(name2);
 				for(Book b : returnList) System.out.println(b);
-				
 				break;
 			/*case 5:
 				bm.bookInfo();
@@ -112,7 +111,7 @@ public class BookTest {
 					System.out.println(b);
 				}
 				break;
-			case 7:
+			case 7:				
 				ArrayList<Book> returnList3 = mgr.magazineOfThisYearInfo(2024);
 				for(Book b : returnList3) {
 					System.out.println(b);
@@ -131,10 +130,10 @@ public class BookTest {
 				for(Book b : returnList5)System.out.println(b);
 				break;
 			case 10:
-				System.out.println(mgr.getTotalPrice());
+				System.out.println("저장된 모든 책의 가격은 "+mgr.getTotalPrice()+"원 입니다.");
 				break;
 			case 11:
-				System.out.println(mgr.getAvgPrice());
+				System.out.println("저장된 모든 책의 평균가격은 "+mgr.getAvgPrice()+"원 입니다.");
 				
 			}
 		}	
