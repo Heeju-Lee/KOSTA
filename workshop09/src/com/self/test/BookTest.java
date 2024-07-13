@@ -38,48 +38,48 @@ public class BookTest {
 			case 0: 
 				break aaa;
 			case 1:
-//				
-//				System.out.println("번호 선택 (1:Book / 2:Magazine) : ");
-//				int num = sc.nextInt();
-//				
-//				if(num < 0 || 2 < num)
-//					continue;
-//					
-//				System.out.println("isbn(String) : ");
-//				String isbn = sc.next();
-//				System.out.println("title(String) : ");
-//				String title = sc.next();
-//				System.out.println("author(String) : ");
-//				String author = sc.next();
-//				System.out.println("publisher(String) : ");
-//				String publisher = sc.next();
-//				System.out.println("price(int) : ");
-//				int price = sc.nextInt();
-//				System.out.println("desc(String) : ");
-//				String desc = sc.next();
-//				
-//				
-//				if(num==1)
-//				{
-//					Book book = new Book(isbn,title,author,publisher,price,desc);
-//					mgr.addBook(book);
-//				}
-//				else if(num == 2)
-//				{
-//					System.out.println("year(int) : ");
-//					int year = sc.nextInt();
-//					System.out.println("month(int) : ");
-//					int month = sc.nextInt();
-//					
-//					Magazine maga = new Magazine(isbn,title,author,publisher,price,desc,year,month);
-//					mgr.addBook(maga);
-//				}
-//				
-				mgr.addBook(new Book("11", "자바", "Alpha", "a.kr", 100, "aaaa"));
-				mgr.addBook(new Magazine("22", "C", "Bravo", "b.kr", 300, "bbbb", 2019, 7));
-				mgr.addBook(new Book("11", "C++", "Charlie", "c.kr", 200, "cccc"));
-				mgr.addBook(new Magazine("44", "자바", "Delta", "d.kr", 50, "dddd", 2020, 2));
 				
+				System.out.println("번호 선택 (1:Book / 2:Magazine) : ");
+				int num = sc.nextInt();
+				
+				if(num < 0 || 2 < num)
+					continue;
+					
+				System.out.println("isbn(String) : ");
+				String isbn = sc.next();
+				System.out.println("title(String) : ");
+				String title = sc.next();
+				System.out.println("author(String) : ");
+				String author = sc.next();
+				System.out.println("publisher(String) : ");
+				String publisher = sc.next();
+				System.out.println("price(int) : ");
+				int price = sc.nextInt();
+				System.out.println("desc(String) : ");
+				String desc = sc.next();
+				
+				
+				if(num==1)
+				{
+					Book book = new Book(isbn,title,author,publisher,price,desc);
+					mgr.addBook(book);
+				}
+				else if(num == 2)
+				{
+					System.out.println("year(int) : ");
+					int year = sc.nextInt();
+					System.out.println("month(int) : ");
+					int month = sc.nextInt();
+					
+					Magazine maga = new Magazine(isbn,title,author,publisher,price,desc,year,month);
+					mgr.addBook(maga);
+				}
+//				
+//				mgr.addBook(new Book("11", "자바", "Alpha", "a.kr", 100, "aaaa"));
+//				mgr.addBook(new Magazine("22", "C", "Bravo", "b.kr", 300, "bbbb", 2019, 7));
+//				mgr.addBook(new Book("11", "C++", "Charlie", "c.kr", 200, "cccc"));
+//				mgr.addBook(new Magazine("44", "자바", "Delta", "d.kr", 50, "dddd", 2020, 2));
+//				
 				break;
 				
 			case 2:
