@@ -14,7 +14,7 @@ public class LambdaTest3{
 		System.out.println(list);
 		//1. 익명 클래스 사용
 		/*
-		Collections.sort(list, new Comparator<Integer>() {// new와 comparator 사이에 ? implements 생략되어있음
+		Collections.sort(list, new Comparator<Integer>() {// new와 comparator 사이에 ? implements 생략되어있음, 선언,생성,오버라이딩
 			@Override
 			public int compare(Integer o1, Integer o2) {
 				return o2-o1;

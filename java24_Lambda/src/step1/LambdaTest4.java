@@ -4,10 +4,12 @@ package step1;
 	훨씬 더 간단한 코드로 다시 작성해보자.
 	
 	@FunctionalInterface
-	1) 매개변수 o, 반환타입 x
-	2) 매개변수 x, 반환타입 o
-	3) 매개변수 o, 반환타입 o
-	4) 매개변수 o, 반환타입 boolean
+	
+	0) 매개변수 x, 반환타입 x => Runnable void run() 별로 없음.
+	1) 매개변수 o, 반환타입 x => Consumer void accept(o) set or sysoutprintln 값을 주입하거나 출력하고 끝남.
+	2) 매개변수 x, 반환타입 o => Supplier T get() get, reading ex) ()->(int)(Math.random)
+	3) 매개변수 o, 반환타입 o => Function T apply(T) // FunctionalInterface ex) i - > i * 100
+	4) 매개변수 o, 반환타입 boolean Predicate boolean test(T) ex) i >-> i%2==0 true & false
 	
  */
 

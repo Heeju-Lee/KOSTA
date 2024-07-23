@@ -29,7 +29,6 @@ public class FunctionalTest1 {
 		
 		List<Integer> list = new ArrayList<Integer>();
 		makeRandomList(s, list);
-		
 		System.out.println(list);
 		
 		System.out.println("\n---------------Consumer---------------");
