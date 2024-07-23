@@ -40,10 +40,10 @@ public class FunctionalTest3 {
 		//list.forEach(System.out::print);
 		
 		//2. list에 담긴 값중에서 2의배수 혹은 3의 배수를 제거한 후 출력
-		/*
-		 * System.out.println("2. 리스트에 2의배수 혹은 3의 배수를 제거한 후 출력 ===> removeIf()");
-		 * list.removeIf(i-> i%2==0 || i%3==0); System.out.println(list);
-		 */
+		
+		System.out.println("2. 리스트에 2의배수 혹은 3의 배수를 제거한 후 출력 ===> removeIf()");
+		list.removeIf(i-> i%2==0 || i%3==0); System.out.println(list);
+		 
 		System.out.println("3. 리스트의 모든 값들을 10 곱한다. ===> replaceAll()");
 		list.replaceAll(i -> i*10);
 		System.out.println(list);
