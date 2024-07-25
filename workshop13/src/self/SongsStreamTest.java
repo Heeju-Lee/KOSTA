@@ -59,7 +59,7 @@ public class SongsStreamTest {
 				System.out.println(issued1995First1);
 				
 		System.out.println("\n=================4번결과.Optional 2 사용=================\n");
-				
+		//
 		Optional<Song> issued1995First2 = songs.stream()
 				.filter(i -> i.getYear()== 1995)
 				.findFirst();
@@ -68,18 +68,29 @@ public class SongsStreamTest {
 		else 
 			System.out.println("해당 년도의 노래는 찾을수 없습니다.");
 				
-				
-
-		
-		
+	
 		System.out.println("\n=================4번결과.forEach 사용=================\n");
-						
+		//				
 		songs.stream()
 				.filter(i -> i.getYear()== 1995)
 				.limit(1)
 				.forEach(System.out::print);//void 반환, Stream은 void를 반환할 수 업다.
 				
-				
+		
+		System.out.println("\n===================================================\n");
+		Song song1995 = songs.stream()
+				.filter(i -> i.getYear()== 1995)
+				.findFirst()
+				.orElseThrow(RuntimeException::new);//에외처리
+		System.out.println(song1995);
+		
+		System.out.println("\n====================================================\n");
+		List<Song> firstsong = songs.stream()
+				.filter(i -> i.getYear()== 1995)
+				.limit(1)
+				.collect(Collectors.toList());
+		System.out.println(firstsong);
+		
 	}
 }
 
