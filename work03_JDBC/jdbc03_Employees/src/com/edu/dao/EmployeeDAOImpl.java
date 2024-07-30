@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.edu.exception.DuplicateNumException;
 import com.edu.vo.Employee;
 
 import config.ServerInfo;
@@ -22,34 +23,9 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
 		return empDAO;
 	}
-
-	
-	//메인 메소드
-	public static void main(String[] args) throws Exception {
-		EmployeeDAOImpl empDAO = EmployeeDAOImpl.getInstance();
-		//3명삽입
-//		empDAO.insertEmployee(new Employee(111,"JAMES", 1234.5,"LA"));
-//		empDAO.insertEmployee(new Employee(222,"TOMAS", 1550.4,"NY"));
-//		empDAO.insertEmployee(new Employee(333,"JULIET", 1487.1,"LA"));
-		
-		//전체검색
-		empDAO.selectEmployee();
-		
-		//num검색
-		empDAO.selectEmployee(111);
-		
-		//DELETE
-		empDAO.removeEmployee(222);
-		empDAO.selectEmployee();//삭제되었는지 확인
-		
-		//수정
-		empDAO.updateEmployee(new Employee("SCOTT", 1567.2, "NY"),111);
-	
-		
-	}
-
+//////////////////////////////////////공통적인 로직 //////////////////////////////////////////////
 	@Override
-	public Connection getConnect() throws Exception {
+	public Connection getConnect() throws SQLException {
 		Connection conn = DriverManager.getConnection(ServerInfo.URL,ServerInfo.USER,ServerInfo.PASSWORD);
 		System.out.println("DB Connect Success!");
 		return conn;
@@ -62,28 +38,50 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	}
 
 	@Override
-	public void closeAll(ResultSet rs, PreparedStatement ps, Connection conn) throws Exception {
+	public void closeAll(ResultSet rs, PreparedStatement ps, Connection conn) throws SQLException {
 		if(rs != null) rs.close();
 		closeAll(ps, conn);		
 	}
-
+////////////////////////////////////// 비지니스 로직 //////////////////////////////////////////////
+	private boolean isExist(int num, Connection conn) throws SQLException{//PK 해당하는 ㅏ람이 있는지 여부
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT num FROM employee WHERE num=?";
+		
+		ps=conn.prepareStatement(query);
+		ps.setInt(1, num);
+		rs = ps.executeQuery();
+		
+		return rs.next();
+	}
 	@Override
-	public void insertEmployee(Employee emp) throws Exception {
+	//해당코드의 문제점
+	//1. connection 연결, 반환 X, 중간에 error가 나면 close가 안된다....finally로 무조건 동작해야 함.
+	//2. 존재유무 확인이 없음.(ADD, REMOVE, UPDATE)
+	public void insertEmployee(Employee emp) throws SQLException, DuplicateNumException {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
-		conn = getConnect();
-		String query = "INSERT INTO employee (num, name, salary, address) VALUE (?,?,?,?)";
-		ps = conn.prepareStatement(query);
-		
-		ps.setInt(1, emp.getNum());
-		ps.setString(2, emp.getName());
-		ps.setDouble(3, emp.getSalary());
-		ps.setString(4, emp.getAddress());
-		
-		System.out.println(ps.executeUpdate()+" Row Insert Success!");
-		
-		closeAll(ps, conn);
+		try {
+			conn = getConnect();
+	
+			//isExist() 함수를 호출해서 사람이 없을 때만 아래코드가 실행되도록 로직을 제어한다.
+			if(!isExist(emp.getNum(),conn)) {//추가하려는 사람이 없다면....
+				String query = "INSERT INTO employee (num, name, salary, address) VALUES (?,?,?,?)";
+				ps = conn.prepareStatement(query);
+				
+				ps.setInt(1, emp.getNum());
+				ps.setString(2, emp.getName());
+				ps.setDouble(3, emp.getSalary());
+				ps.setString(4, emp.getAddress());
+				
+				System.out.println(ps.executeUpdate()+" Row Insert Success!");
+			}else {
+				throw new DuplicateNumException(emp.getName()+"님은 이미 회원입니다.");
+			}
+		}finally {
+			closeAll(ps, conn);//무조건 자원 반환은 된다.
+		}
 	}
 
 	@Override
@@ -126,7 +124,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		ResultSet rs = null;
 		conn = getConnect();
 		
-		System.out.println("================= 전체검색결과 =================");
+		System.out.println("\n======================== 전체검색결과 ========================\n");
 		ArrayList<Employee> list = new ArrayList<Employee>();		
 		
 		String query = "SELECT num, name, salary, address FROM employee";
@@ -143,7 +141,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	
 		list.stream()
 			.forEach(i->System.out.println(i));		
-		System.out.println("=============================================");
+		System.out.println("\n===========================================================\n");
 		
 		closeAll(rs, ps, conn);
 		return list;
@@ -159,7 +157,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		Employee employee = null;
 		conn = getConnect();
 		
-		System.out.println("================= num "+num+"번 검색결과 =================");
+		System.out.println("\n=================== num :"+num+"번 검색결과 ===================\n");
 		String query = "SELECT num, name, salary, address FROM employee WHERE num=?";
 		ps = conn.prepareStatement(query);
 		
@@ -175,7 +173,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 					rs.getString("address")
 			);
 			System.out.println(employee);
-			System.out.println("====================================================");
+			System.out.println("\n=========================================================\n");
 		}
 		closeAll(rs, ps, conn);
 		return employee;
