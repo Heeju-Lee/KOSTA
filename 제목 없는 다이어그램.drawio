@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-31T02:30:31.025Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="s1UMoCHwIXkCoFxcuQbQ" version="24.6.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-07-31T02:30:58.529Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="6HQ0qQhl45Dy4naL15OQ" version="24.6.5" type="github" pages="2">
   <diagram name="페이지-1" id="mplE918UPiMZE09EFnvx">
     <mxGraphModel dx="4074" dy="2030" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
@@ -211,32 +211,11 @@
             <mxPoint x="-431" y="194" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="nP0QpTWR2Xotd-JNMvC0-35" value="로그인을 하다" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="147" y="-62" width="140" height="36" as="geometry" />
-        </mxCell>
         <mxCell id="nP0QpTWR2Xotd-JNMvC0-36" value="책을 구매하다" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-105" y="51" width="140" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="nP0QpTWR2Xotd-JNMvC0-38" value="Include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.479;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nP0QpTWR2Xotd-JNMvC0-3" target="nP0QpTWR2Xotd-JNMvC0-35">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="142" y="47.99999999999998" as="sourcePoint" />
-            <mxPoint x="258" y="12.999999999999979" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="nP0QpTWR2Xotd-JNMvC0-39" value="Include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;entryX=0.257;entryY=1.083;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="nP0QpTWR2Xotd-JNMvC0-36" target="nP0QpTWR2Xotd-JNMvC0-35">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="111" y="77" as="sourcePoint" />
-            <mxPoint x="107" y="-118" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="nP0QpTWR2Xotd-JNMvC0-40" value="회원가입을 하다" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="147" y="-177" width="140" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="nP0QpTWR2Xotd-JNMvC0-43" value="Include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="nP0QpTWR2Xotd-JNMvC0-28" target="nP0QpTWR2Xotd-JNMvC0-35">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="19" y="2.010000000000005" as="sourcePoint" />
-            <mxPoint x="171" y="-75.99" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="nP0QpTWR2Xotd-JNMvC0-44" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;fontSize=12;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="nP0QpTWR2Xotd-JNMvC0-36">
           <mxGeometry width="160" relative="1" as="geometry">
