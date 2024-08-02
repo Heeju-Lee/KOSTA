@@ -26,7 +26,7 @@
           <mxGeometry x="-1469" y="-638" width="140" height="41" as="geometry" />
         </mxCell>
         <mxCell id="TNKe9sJZqwaq70S3xL5p-61" value="회원정보를 등록하다." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-1176" y="-716" width="140" height="41" as="geometry" />
+          <mxGeometry x="-1210" y="-761" width="140" height="41" as="geometry" />
         </mxCell>
         <mxCell id="TNKe9sJZqwaq70S3xL5p-62" value="회원정보를 수정하다." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1469" y="-744" width="140" height="41" as="geometry" />
@@ -35,7 +35,7 @@
           <mxGeometry x="-1469" y="-691" width="140" height="41" as="geometry" />
         </mxCell>
         <mxCell id="TNKe9sJZqwaq70S3xL5p-64" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;모든 회원정보를 조회하다&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-1166" y="-211" width="140" height="41" as="geometry" />
+          <mxGeometry x="-1166" y="-213" width="140" height="41" as="geometry" />
         </mxCell>
         <mxCell id="TNKe9sJZqwaq70S3xL5p-65" value="Customer&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="-1860" y="-720" width="30" height="60" as="geometry" />
@@ -100,13 +100,13 @@
             <mxPoint x="-1341" y="-347.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TNKe9sJZqwaq70S3xL5p-89" value="include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="TNKe9sJZqwaq70S3xL5p-62" target="TNKe9sJZqwaq70S3xL5p-61">
+        <mxCell id="TNKe9sJZqwaq70S3xL5p-89" value="include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="TNKe9sJZqwaq70S3xL5p-62" target="TNKe9sJZqwaq70S3xL5p-61">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="-1261" y="-624.5" as="sourcePoint" />
             <mxPoint x="-971" y="-470.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TNKe9sJZqwaq70S3xL5p-90" value="include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="TNKe9sJZqwaq70S3xL5p-63" target="TNKe9sJZqwaq70S3xL5p-61">
+        <mxCell id="TNKe9sJZqwaq70S3xL5p-90" value="include" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontSize=12;curved=1;entryX=0.087;entryY=0.902;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="TNKe9sJZqwaq70S3xL5p-63" target="TNKe9sJZqwaq70S3xL5p-61">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="-1319" y="-654.5" as="sourcePoint" />
             <mxPoint x="-1151" y="-584.5" as="targetPoint" />
