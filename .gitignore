@@ -26,3 +26,4 @@ replay_pid*
 .gitignore
 eclipse
 util
+mysql-workbench
