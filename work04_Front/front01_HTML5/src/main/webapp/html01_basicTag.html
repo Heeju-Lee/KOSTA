@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>html 기본 문법</title>
+<style type="text/css">
+	body{
+		width: 800px;
+		height: 500px;
+		border: 1px solid gray;/*선을 지정함*/
+		margin: auto;/*margin:동서남북 여백, auto:자동 */
+		margin-top: 50px;/*위 여백*/ 
+	}
+	#order{/*id 태그 선택자 :#abc*/
+		float: left;
+		width: 250px;
+		margin-left: 100px;
+	}
+	div#unorder{
+		float: right;
+		width: 250px;
+		margin-right: 50px;
+	}
+	#header{
+		text-align: center;
+		color:crimson;
+		font-family: sans-serif;
+		font-weight: bold;
+	}
+	
+	#order, #unorder{
+		margin-top: 50px;
+		color: SlateBlue;
+		font-size: 17px;
+		border: 2px dashed orange;
+		border-radius: 10px;
+		padding: 20px;
+		background-color: rgba(255,99,71,0.1);
+	}
+	
+</style>
+<!-- head 닫기전에 fuction 넣어주기 -->
+<script type="text/javascript">
+	function push(){
+		//팝업창이 뜬다....
+		alert("점심시간이 끝났습니다...ㅠ_ㅠ")
+	}
+</script>
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+	<h1>Hello HTML5 With CSS3 Layout~~</h1>
+</div>
+
+<!-- 버튼을 클릭하면 자바스크립트 push()함수가 자동호출된다. 
+	 자바스크립트 기술로 연결된다.
+-->
+<button onclick="push()">CLICK</button>
+
+<div id="order">
+	<p>Order List</p>
+	<p>순번을 가지는 목록</p>
+	<ol>	
+		<li><a href="https://www.w3schools.com">HTML5</a></li>
+		<li>CSS3</li>
+		<li>Javascript</li>
+	</ol>
+</div>
+<!-- <hr> -->
+<div id="unorder">
+	<p>UnOrder List</p>
+	<p>순번을 가지지 않는 목록</p>
+	<ul>	
+		<li>HTML5</li>
+		<li>CSS3</li>
+		<li>Javascript</li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>
