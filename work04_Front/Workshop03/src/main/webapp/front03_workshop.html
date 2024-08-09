@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+      <title>KOSTA CSS</title>
+
+<style type="text/css">
+	*{
+		background: black;
+		color: white;
+	}
+	header{
+		font-size: 12px;
+		padding: 10px 10px 60px 10px;
+	}
+	.cover>img{
+		width: 200px;
+		height: 200px;
+		padding: 20px 30px;
+	}
+	.playlist-title{
+		font-size: 30px;
+		font-weight: bold;
+		padding: 0px 30px;	
+	}
+	.hot-badge{
+		background: gray;
+		color: tomato;
+		font-weight: bold;
+		border-radius: 5px;
+		font-size: 10px;
+		padding: 3px 5px;
+		}
+	
+	.artist>img{
+		width: 50px;
+		height: 50px;
+		border-radius: 10px;	
+	}
+	.artist, .description{
+		color: gray;
+		padding: 10px 30px;
+	}
+	
+	.play-button{
+		width: 100px;
+		background: rgb(107, 88, 255);
+		border-radius: 5px;
+		padding: 10px;
+		margin: 30px;
+		font-weight: bold;
+		border: none;
+	}
+
+</style>
+</head>
+<body>
+    <header>
+      <div class="wrap">KOSTA Music</div>
+    </header>
+    <main class="wrap">
+      <div class="info">
+        <div class="cover">
+          <img
+            class="cover-image"
+            src="./image/cafe.jpg"
+            alt="카페에서 일할 때 커버 이미지"
+         >
+        </div>
+        <h1 class="playlist-title">
+          카페에서 일할 때
+          <span class="hot-badge"> 인기 </span>
+        </h1>
+        <div class="artist">
+          <img
+            src="./image/logo.jpg"
+            alt="kosta 프로필"
+            class="artist-profile"
+         >
+          	Kosta Coffee
+        </div>
+        <div class="description">
+          차분하게 흐르는 따뜻한 음악과 함께하는 휴식.KOSTA Music 에디터가
+          매달 업데이트하는 플레이리스트입니다. 마음에 드는 곳이 있다면 보관함에
+          추가해 보세요.
+        </div>
+        <button class="play-button">▶️ 지금 듣기</button>
+      </div>
+    </main>
+  </body>
+</html>
