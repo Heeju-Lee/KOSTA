@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+flex-grow : 원하는 비율로 사이즈를 줄 수 있음.
+flex-shrink : 
+
+ -->
+
+
+
+
+<!--
+부모요소의 넓이 : 500px
+자식 요소의 넓이 : 100px * 3 = 300px
+남은 넓이는 200px이 되는데 이 남은 200px의 넓이를 flex-grow가 나눠 먹는다.
+200px에 대해서 2:3으로 나눠먹는다
+  -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+
+
+*{
+	box-sizing: border-box;
+}
+.wrap {
+	width:500px;
+    display:flex;
+/*     justify-content: space-between; */
+    flex-wrap:nowrap;
+    border: 3px dashed gray;
+  
+}
+.box{
+	width:100px;
+	border: 2px solid red;
+/* 	flex: 1; */
+}
+
+.box1{
+	background: yellow;
+/* 	flex-grow: 2; */
+}
+
+.box2{
+	background: pink;
+/* 	flex-grow: 3; */
+}
+
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<p class="box box1">box1</p><!-- blocking tag -->
+	    <p class="box box2">box2</p>
+	    <p class="box box3">box3</p>
+	</div>
+</body>
+</html>

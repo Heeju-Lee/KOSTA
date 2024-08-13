@@ -7,49 +7,65 @@
 
 <style type="text/css">
 	*{
-		box-sizing: border-box;
+	 	box-sizing: border-box;
 	}
-    body{
-    	margin: 0;
-    }
-	.header{
-		background-color:#D0D0D0;
-		text-align: center;
-		padding: 20px;
-	}
-	.topnav{
-		background-color: #333;
-		overflow: hidden;/*  부모 요소의 범위를 넘어가는 자식 요소의 부분은 보이지 않도록 처리한다. */
-	}
-	.topnav>a{
-	/*
-		자식 요소에 float 속성을 주게되면 부모 영역 밖으로 흘러 넘치는 현상이 발생
-		이를 해결하는 가장 대표적인 방법이 overflow:hidden을 지정하는 것
-	*/
-		color: #f2f2f2;
-		text-align: center;
-		padding: 14px 16px; 		
-		float: left;
-		text-decoration: none;
+
+	body{
+		margin: 0;
 	}
 	
-	.topnav>a:hover{
-		color: yellow;
-	}	
-	.column{
-		float: left;
-		width: 33.33%;
-		padding: 15px;
-		
-	}	
-	.footer{
-		background:#D0D0D0;
-		text-align: center;
-		padding: 30px;
-		width: 33.33%;		
-		position: absolute;top: 80%; left: 30%;
-		clear: both;	
-	}
+	 .header{
+	 	text-align: center;
+	 	background: rgb(240, 240, 240);
+	 	padding: 20px; 
+	 }
+	 .header>h1{
+	 	font-weight: bold;
+	 	font-size: 30px;
+	 }
+	 
+	 .header>p{
+	 	font-size: 15px;
+	 }
+	 
+	 .topnav{
+	 	background: #333;
+	 	overflow: hidden;
+	 }
+	 .topnav>a{
+	 	float: left;
+	 	text-align: center;
+	 	color: white;
+	 	padding: 10px 20px;
+	 	text-decoration: none;
+	 }
+	 
+	  .topnav>a:HOVER{
+		background: lightpink;
+		font-weight: bold;
+	 }
+	 
+	 .row{
+	 	overflow: hidden;
+	 }
+	 
+	 .column{
+	 	float: left;
+	 	width: 33.33%;
+	 	padding: 20px 20px 300px 20px;
+
+	 }
+	 .footer{
+	 	text-align: center;
+	 	padding: 30px 75px;
+	 	background: rgb(240, 240, 240);
+		position: absolute;
+		width: 30%; 
+		top: 80%; left: 40%;
+	 	clear: both;
+	 	margin: auto;
+	 }
+	 
 </style>
 </head>
 <body>
@@ -90,3 +106,5 @@
 
 </body>
 </html>
+
+
