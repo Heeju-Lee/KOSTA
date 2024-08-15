@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소들 꽉 채우기</title>
+<!-- 
+flex box에서 요소를 꽉 채우고 싶을때는
+요소를 얼나마 늘릴지 flex-grow
+요소를 얼나마 줄일지 flex-shrink
+ -->
+
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #f9fafc;
+		margin: 60px;
+		
+		
+	}
+	.container{
+		border: 5px dashed #cacfd9;
+		width: 300px;
+		height: 500px;		
+		display: flex;		
+	}
+	.box{
+		border-radius: 15px;
+		color: #f9fafc;
+		padding: 30px;
+		width: 200px;
+	}
+	.red{
+		background-color: Tomato;	
+		flex-shrink: 0;	/*  300에서 변화가 없고 */
+	}
+	.green{
+	 	background-color: MediumSeaGreen;	 	
+	 	/* flex-shrink: 2; */
+	 }	 
+
+	 .blue{
+	 	background-color: DodgerBlue;	 	
+	 	flex-shrink: 5; /* 상대적인 값 . 300이라면 여기서 2만큼 거 줄어든다.. */
+	 }	
+	
+
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="red box">RED</div>
+	<div class="green box">GREEN</div>
+	<div class="blue box">BLUE</div>	
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+    body{
+    	margin: 0;
+    }
+	.header{
+		background-color:#D0D0D0;
+		text-align: center;
+		padding: 20px;
+	}
+	.topnav{
+		background-color: #333;
+		overflow: hidden;/*  부모 요소의 범위를 넘어가는 자식 요소의 부분은 보이지 않도록 처리한다. */
+	}
+	.topnav>a{
+	/*
+		자식 요소에 float 속성을 주게되면 부모 영역 밖으로 흘러 넘치는 현상이 발생
+		이를 해결하는 가장 대표적인 방법이 overflow:hidden을 지정하는 것
+	*/
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px; 		
+		float: left;
+		text-decoration: none;
+	}
+	
+	.topnav>a:hover{
+		color: yellow;
+	}	
+	.column{
+		float: left;
+		width: 33.33%;
+		padding: 15px;
+		
+	}	
+	.footer{
+		background:#D0D0D0;
+		text-align: center;
+		padding: 30px;
+		width: 33.33%;		
+		position: absolute;top: 80%; left: 30%;
+		clear: both;	
+	}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Header</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+ </div>   
+
+<div class="footer">
+  	<p><h2>Footer</h2></p>
+</div>
+
+
+
+</body>
+</html>
