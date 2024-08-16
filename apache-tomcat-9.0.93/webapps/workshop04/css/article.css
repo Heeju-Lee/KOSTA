@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  padding: 0px 100px;
+}
+
+#banner {
+  background-color:DodgerBlue;
+  color:aliceblue;
+  padding: 30px;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 5px;
+}

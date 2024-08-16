@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+	background-color: #f9fafc;
+	margin: 60px;
+}
+.container{
+	border: 5px dashed #cacfd9;
+	width: 500px;
+	height: 500px;
+	
+	display: flex;
+	/* 요소가 많아서 해당 영역 밖으로 넘쳐날 때
+	   넘쳐나는 요소들을 정렬하면서 배치할 수 있다.
+	   이때 넘치는 요소들은 교차축 방향으로 넘어가서 배치된다!!!	
+	 */
+	flex-wrap: wrap;
+		
+}
+.box{
+	border-radius:15px;
+	color: #f9fafc;
+	padding: 30px; 
+}
+.red{ background-color: Tomato;}
+.green{ background-color:MediumSeaGreen;}
+.blue{ background-color: DodgerBlue;}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="red box">1</div>
+	<div class="green box">2</div>
+	<div class="blue box">3</div>
+	<div class="red box">4</div>
+	<div class="green box">5</div>
+	<div class="blue box">6</div>
+	<div class="red box">7</div>
+	<div class="green box">8</div>
+	<div class="blue box">9</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

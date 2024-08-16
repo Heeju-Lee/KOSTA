@@ -1,0 +1,48 @@
+<!-- 
+변수
+::
+지역변수 : 함수 안에서 선언
+전역변수 : var를 안붙이면 전역변수
+
+ECMA
+1)
+- let : local
+- const :  
+- var
+2)
+- Arrow Function(Anonymous)
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	const name = "Peter";
+	const myName = "James"; //var안붙였다.
+	
+	console.log(name);
+	console.log(myName);
+	
+	function showInfo(){
+		let age =33; //지역변수
+		let myAge = 22; //전역변수
+		
+/* 		console.log("name "+name+", "+age);
+		console.log("name "+myName+", "+myAge); */
+	}
+	
+	//console.log(age); //이건에러남
+	// console.log(myAge); //이건에러남
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+script 부분을 완성합니다.
+1. 버튼을 클릭하면 span영역이 보이도록 작성
+2. id가 hello인 영역의 내용을 Hello로 변경
+   글자색은 red로 지정
+3. id가 edu인 영역의 내용을 BootCamp로 변경
+	글자색은 blue로 지정
+ -->
+<style type="text/css">
+	.edit{
+		display: none;
+	}
+</style>
+</head>
+<body>
+<h2 id="hello">안녕하세요</h2>
+<h2 id="edu">KOSTA</h2>
+<hr>
+<button onclick="push()">Input Name</button>
+<span class="edit">
+ 	NAME <input type="text" name="name">
+</span>
+</body>
+<script type="text/javascript">
+	function push() {
+		document.querySelector('.edit').setAttribute('style','display:block');
+	}
+	document.getElementById('hello').innerHTML="Hello";
+	document.getElementById('hello').style.color='red';
+	
+	document.getElementById('edu').innerHTML="BootCamp";
+	document.getElementById('edu').style.color='blue';
+</script>
+</html>
