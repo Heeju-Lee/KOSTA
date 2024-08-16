@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	text-decoration: none;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+	border-collapse: collapse;
+	font-family: 'Times New Roman', serif;
+	box-sizing: border-box;
+}
+.jumbotron {
+	position: relative;
+	z-index: 1;
+	background: linear-gradient(#50874D, white);
+	height: 500px;
+}
+.jumbotron::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 350px;
+	background-image: url("./img/mori.jpg");
+	color: rgba(255, 255, 255, 1);
+	background-color: transparent;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: .7;
+}
+.header {
+	width: 1280px;
+	/* background: rgba(255,0,0,0.3); */
+	/* margin: auto; */
+	display: flex;
+	height: 84px;
+	/* background: red; */
+}
+.searchArea {
+	width: 300px;
+	height: 60px;
+	border-radius: 5px;
+	margin-top: 24px;
+	/* background: rgba(0,0,0,0.5); */
+}
+.searchArea>form>input {
+	border: none;
+	width: 250px;
+	height: 40px;
+	color: rgb(255, 0, 0);
+	padding-left: 10px;
+	margin-left: 10px;
+}
+.searchArea>form>span {
+	width: 50px;
+	color: rgb(255, 0, 0);;
+	font-weight: bold;
+	cursor: pointer;
+	text-shadow: 2px 2px 5px black;
+}
+.nav {
+	display: flex;
+	justify-content: flex-end;
+	width: 940px;
+	border-radius: 7px;
+	margin-top: 24px;
+	line-height: 60px;
+	margin-left: 20px;
+}
+.nav>li {
+	margin-left: 84px;
+}
+.nav>li>a {
+	color: rgb(255, 0, 0);;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 2px 2px 5px black;
+}
+/*  모리의 정원 텍스트  */
+.intro_text {
+	width: 100%;
+	margin-top: 150px;
+	text-align: center;
+}
+.intro_text>h1, .intro_text>h5 {
+	color: white;
+	text-shadow: 2px 2px 4px #000000;
+}
+.intro_text>h5 {
+	padding: 10px;
+}
+/*  이미지 부분 */
+.main_text0 {
+	width: 100%;
+	height: 300px;
+	margin-top: 20px;
+	background: #F1F2F3;
+}
+.icons {
+	display: flex;
+	width: 1280px;
+	height: 302px;
+	/* background: orange; */
+	margin: auto;
+}
+.icons>li {
+	flex: 1;
+	background: white;
+	margin-top: 49px;
+	height: 302px;
+	text-align: center;
+}
+img {
+	width: 200px;
+	height: 220px;
+	border-radius: 20%;
+}
+.contents1_bold {
+	letter-spacing: 2px;
+	font-weight: lighter;
+}
+.contents2 {
+	letter-spacing: 2px;
+	color: black;
+	line-height: 40px;
+}
+.row {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	
+}
+.products{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.products.details img{
+	width: 24%;
+	height: 300px;
+	border-radius: 0em;
+}
+.products>h6{
+	text-align: center;
+} 
+
+</style>
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container">
+			<div class="header">
+				<div class="searchArea">
+					<form action="#">
+						<input type="search" placeholder="search"> <span>검색</span>
+					</form>
+				</div>
+				<ul class="nav">
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">MENU</a></li>
+					<li><a href="#">SERVICE</a></li>
+					<li><a href="#">CONTACT</a></li>
+				</ul>
+			</div>
+			<div class="intro_text">
+				<h1>Fragrant Moments</h1>
+				<h5 class="contents1">특별한 순간, 소중한 사람에게 가장 아름다운 감정을 담은 꽃다발을
+					선물하세요.</h5>
+			</div>
+			
+		<div class="products">
+			<div class="details">
+				<img alt="" src="https://img07.shop-pro.jp/PA01398/874/product/170134498.jpg?cmsp_timestamp=20240409141128">
+				<h6>season bouquet</h6>
+			</div>
+			<div class="details">
+				<img alt="" src="https://img07.shop-pro.jp/PA01398/874/product/170134498.jpg?cmsp_timestamp=20240409141128">
+				<h6>season bouquet</h6>
+			</div>
+			<div class="details">
+				<img alt="" src="https://img07.shop-pro.jp/PA01398/874/product/170134498.jpg?cmsp_timestamp=20240409141128">
+				<h6>season bouquet</h6>
+			</div>
+			<div class="details">
+				<img alt="" src="https://img07.shop-pro.jp/PA01398/874/product/170134498.jpg?cmsp_timestamp=20240409141128">
+				<h6>season bouquet</h6>
+			</div>
+			<div class="details">
+				<img alt="" src="https://img07.shop-pro.jp/PA01398/874/product/170134498.jpg?cmsp_timestamp=20240409141128">
+				<h6>season bouquet</h6>
+			</div>
+			<div class="details">
+				<img alt="" src="https://img07.shop-pro.jp/PA01398/874/product/170134498.jpg?cmsp_timestamp=20240409141128">
+				<h6>season bouquet</h6>
+			</div>
+		</div>
+		<!-- container 끝 -->
+	</div>
+	<!-- jumbotron 끝 -->
+</body>
+</html>

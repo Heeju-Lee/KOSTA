@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.container{
+	text-align: center;
+}
+</style>
+<!-- ChartJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+	<h1>A항공사 현황</h1>
+	<canvas id="line-chart"></canvas>
+</div>
+<!-- 
+{}안에 들어가는 구성요소
+- type
+- data
+	> labels
+	> datasets
+- options : 그래프가 그려진 후에 필요한 properties 를 지정
+ -->
+<script type="text/javascript">
+	const ctx = document.querySelector("#line-chart");
+	const myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+			datasets: [
+				{
+					label: '월별에 따른 승객수 데이타(백만단위)',
+					data : [100, 112, 99, 115, 120, 122, 140, 150, 130, 119, 118, 129]	
+				}
+			]
+		},
+		
+		options:{
+			scales:{
+/* 				x:{
+					type:'time',
+					min: new Date('2023-01-01').valueOf(),
+					max: new Date('2023-12-31').valueOf()
+				}, */
+				y:{
+					type:'linear',
+					min: 20,
+					max: 220
+				}
+			}			
+		}
+	});
+
+</script>
+</body>
+</html>
