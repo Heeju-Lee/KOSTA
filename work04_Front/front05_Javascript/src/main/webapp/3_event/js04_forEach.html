@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function choiceMenu() {
+/* 		let menu = document.frm.menu;
+		let str = "";
+
+		for(let i=0; i<menu.length; i++){
+			if(menu[i].checked){
+				str += menu[i].value + " "; // 메뉴 사이에 띄어쓰기 추가
+			}
+		} */
+		
+		// 체크된 메뉴가 없는 경우 경고
+/* 		if(str == "") {
+			alert("하나 이상의 메뉴는 반드시 선택해주세요!!");
+		} else {
+			alert("당신이 선택하신 메뉴는 " + str + "!!");
+		}
+		
+		// 확인을 누른 후 체크박스 초기화
+		for(let i=0; i<menu.length; i++){
+			menu[i].checked = false;
+		} */
+		
+		//3. forEach() 사용해서 동일한 결과가 출력되도록 로직을 작성..슬랙으로 보내기
+		let menus = document.frm.menu;
+		let str = "";
+		
+		menus.forEach((menu)=>{
+			if(menu.checked) {
+				str += menu.value + " ";
+				menu.checked=false;
+			}
+		});
+		
+		if(str == "") alert("하나 이상의 메뉴는 반드시 선택해주세요!!");
+		else alert("당신이 선택하신 메뉴는 " + str + "!!");
+		}
+</script>
+</head>
+<body>
+<h2>CheckBox Form..</h2>
+
+<form action="#" name="frm">
+	<strong>오늘 점심 드시고 싶은 메뉴를 고르세요. </strong><br><br>
+	<input type="checkbox" name="menu" value="초밥" class="menu">초밥<br>
+	<input type="checkbox" name="menu" value="우동" class="menu">우동<br>
+	<input type="checkbox" name="menu" value="짜장면" class="menu">짜장면<br>
+	<input type="checkbox" name="menu" value="카레라이스" class="menu">카레라이스<br>	
+	<input type="button" value="선택" onclick="choiceMenu()">
+</form>

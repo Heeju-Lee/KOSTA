@@ -1,0 +1,46 @@
+<!-- 
+Turn on
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU
+Turn off
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhVXo0PStCaz-E5mudcAtsDhV53vPXqpUFQ&usqp=CAU
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>What Can JavaScript Do?</h2>
+	<p>JavaScript can change HTML attribute values.</p>
+	<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+	
+	<button id="turnOn">Turn on the light</button>
+	
+	<img style="width: 150px;display: inline;" 
+	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU" >
+	
+	<button id="turnOff">Turn off the light</button>
+	
+</body>
+
+<script type="text/javascript">
+ 	document.querySelector("#turnOn").onclick = on;
+ 	document.querySelector("#turnOff").onclick = off;
+ 	
+ 	function on(){
+ 		//이미지 영역을 얻어와서
+ 		let img = document.querySelector("img");
+ 		//이미지의 속성값을 변경..
+ 		img.src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU";
+	}
+ 	
+ 	function off(){
+ 		let img = document.querySelector("img");
+ 		img.src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhVXo0PStCaz-E5mudcAtsDhV53vPXqpUFQ&usqp=CAU";
+	}
+	
+</script>
+</html>
