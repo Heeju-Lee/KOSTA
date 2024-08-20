@@ -59,7 +59,7 @@
   	function btn(){
  		 location.href = "./index.html";
   	}
-  	
+  	//비번 비번2 checking 맞으면 다시 아래 html코드로 이동
   	function register(){
   		let pwd1 = document.querySelector("#password").value;
   		let pwd2 = document.querySelector("#password2").value;  
@@ -74,7 +74,7 @@
 			return;
 			
 		}//if
-		document.querySelector("#regForm").submit();
+		//document.querySelector("#regForm").submit();
   	}
   	
   </script>
@@ -94,6 +94,7 @@
     </nav>
     <div id="banner">지금 당신의 행복! IT's KB Life!</div>
     <div id="register">
+    <!-- 2. 여기서 모든 폼에 입력값이 다 입력되도록 required 확인 ..전송 -->
       <h1>Register</h1>
       <form action="index.html" id="regForm" onsubmit="register(event)">
         <div class="form-item">
@@ -122,8 +123,8 @@
         </div>
         
         <hr>
-        <button type="submit" onclick="register()">회원 가입</button>
-        <button type="button" onclick="btn()">홈</button>
+        <button onclick="register()">회원 가입</button>
+        <button onclick="btn()">홈</button>
       </form>
     </div>
     <footer>
