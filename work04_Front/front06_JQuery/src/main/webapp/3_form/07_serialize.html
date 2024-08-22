@@ -8,8 +8,15 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-	$(function(){  
-		
+	$(function(){
+		//폼에 입력된 모든 값을 다 가지고 서버로 전송되도록 하는 기능.....serialize()
+		//serialize() 입력된 값을 다 쿼리스트링으로 알아서 만들어서 전송한다...name=hjl&id=11
+		$('#frm').submit(function(){
+			let query= $(this).serialize();
+			alert(query);
+			
+			return false;
+		});
 	});
 </script>
 </head>

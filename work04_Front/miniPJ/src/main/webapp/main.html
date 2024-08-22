@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 전체 레이아웃 기본 스타일 */
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* header */ 
+header {
+	display: flex;
+	align-items: center; /* 세로 가운데 정렬 */
+	justify-content: space-between; /* 좌우 끝 정렬 */
+	border-bottom: 3px solid gray;
+	padding: 0 70px; /* 좌우 패딩 추가 */
+	height: 70px;
+	background-color: #f8f8f8; /* 배경색 */
+}
+
+header .headerLink {
+	display: flex;
+	align-items: center; /* 세로 가운데 정렬 */
+	gap: 30px;	/* 링크 간 간격  */
+}
+
+header h1{
+	font-size: 30px;
+}
+
+header h3 {
+	color: black;
+	margin: 0; /* 제목 요소의 기본 마진 제거 */
+}
+
+header a {
+	color: black;
+}
+
+header a:hover {
+	color: #666; /* 링크에 마우스 올릴 때 색상 변경 */
+}
+
+/* footer */
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 3px solid gray;
+	background-color: #f8f8f8;
+	padding: 20px 0;
+}
+
+footer div {
+	display: flex;
+	justify-content: space-between;
+	width: 940px;
+	color: #777;
+}
+
+footer section {
+	width: 300px;
+}
+
+footer h3 {
+	color: black;
+	margin-bottom: 10px; /* 제목 하단 간격 추가 */
+}
+
+footer a {
+	color: #333;
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: #000;
+	text-decoration: underline; /* 링크에 마우스 올릴 때 밑줄 표시 */
+}
+
+footer ul {
+	margin: 0;
+	padding-left: 20px; /* 리스트 패딩 왼쪽에 추가 */
+	list-style: square;
+	color: #565656;
+}
+
+footer ul li a {
+	display: block;
+}
+
+/* main */
+.container{
+	margin: 0 auto;
+}
+
+.search{
+	padding: 80px 50px;
+	background-image: url("image/BG.jpg");
+	background-size: cover;
+	height : 400px;
+	text-align: center; /* 중앙 정렬 */
+
+	position: relative;
+	overflow: hidden;
+
+}
+
+.search::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("image/BG.jpg");
+	background-size: cover;
+	background-position: center; /* 배경 이미지 중앙 정렬 */
+	opacity: 0.5; 
+	z-index: 0; 
+}
+
+.search p{
+	color: #f8f8f8;
+	font-size : 50px;
+	position: relative; /* 텍스트가 배경 위에 위치하도록 설정 */
+	z-index: 1;
+}
+
+.serachBorder{
+	border : 1px solid gray; 
+	background-color: white; 
+	border-radius: 20px;
+	display : inline-block;
+	padding : 15px;
+	margin : 20px;
+	z-index: 1;	
+	position: relative;
+}
+
+.serachBorder span{ 
+	padding : 20px;
+}
+
+.search select{
+	padding-right: 100px;
+}
+
+.searchResult{
+	margin : 100px auto;
+	width: 50%; /* 가운데 정렬을 위해 너비 설정 */
+}
+.searchResult .content{
+
+	display: flex;
+	flex-direction: row;/* 수평 방향 나열 */
+	align-items: center; /* 세로 가운데 정렬 */
+	width: 100%;
+	height: 150px;
+	margin-bottom: 40px;
+	border-radius: 10px;
+}
+
+
+.searchResult .content-left{
+	width: 30%; /* 왼쪽 콘텐츠의 너비를 40%로 설정 */
+	height: 100%;
+	margin-right: 20px;
+}
+.searchResult .content-left img{
+	object-fit: cover; 
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.searchResult .content-right{
+	width: 70%; /* 오른쪽 콘텐츠의 너비를 60%로 설정 */
+	height: 100%;
+	display: flex;
+	flex-direction: column; /* 수직 방향 정렬*/
+	align-items: center; /* 세로 가운데 정렬 */
+}
+
+.searchResult .content-right #price{
+	margin-top: auto; /* 남는 공간을 위로 밀어 가격을 아래로 배치 */
+	margin-right: 30px;
+	text-align: right; /* 가격을 오른쪽 정렬 */
+}
+
+.searchResult #ghName{
+	font-size: 20;
+}
+
+
+/* 누르면 상세 페이지로 이동*/
+.searchResult .content{
+
+}
+
+.shadow{
+	box-shadow: 3px 3px 11px 14px #555555;
+}
+
+</style>
+
+<script type="text/javascript">
+	$(function() {
+
+		// option이 선택 되면 
+		$("#searchloc").on("change", function(){
+			let locArr = [	"jeju_western",
+							"seogwipo_western",
+							"jeju_center",
+							"seogwiop_enter",
+							"jeju_eastern",
+							"seogwipo_eastern"];
+							
+			let location = $(this).val();
+			//console.log(location);
+
+			$.each(locArr, function(index, iteam){
+				$("." +iteam).css("display","flex");
+			});	
+			
+			$.each(locArr, function(index, iteam){
+				//console.log(iteam)
+				if( iteam != location)
+					$("." +iteam).css("display","none");
+			});			
+		
+		});
+
+		//content가 선택되면
+		$(".content").on("click", function(){
+
+		});
+		
+		//content가 선택되면
+		$(".content").hover(function(){
+			$(this).addClass("shadow");
+		},
+		function(){
+			$(this).removeClass("shadow")
+		});
+
+
+		
+	});
+
+	
+
+</script>
+</head>
+<body>
+
+	<header>
+		<div class="header-left">
+			<img src="image/logo.png" id="logo" width="40px" height="40px">
+		</div>
+		<h1>이디오랜</h1>
+		<div class="header-right">
+			<div class="headerLink">
+				<h3><a href="#">Home</a></h3> 
+				<h3><a href="#">MyPage</a></h3>
+			</div>
+		</div>
+	</header>
+
+	<!-- main  -->
+	<div class ="main">
+		<div class = "search">
+			<p>설렘 가득한 제주에서 추억을 만들어보세요</p>
+			<div class = "serachBorder" action ="#">
+				<span>어디로 떠나시겠습니까?</span>
+				
+				<span>
+					<select id = "searchloc">
+						<option value="jeju_western">제주시 서부</option>
+						<option value ="seogwipo_western">서귀포시 서부</option>				
+						<option value ="jeju_center">제주 시내권</option>
+						<option value="seogwiop_enter">서귀포시</option>				
+						<option value="jeju_eastern">제주시 동부</option>
+						<option value="seogwipo_eastern">서귀포시 동부</option>																
+					</select>
+				</span>
+			</div>
+		</div>
+	
+		<div class = "searchResult">
+
+			<div class="content jeju_western" >
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content jeju_western">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content seogwipo_western">
+				<div class="content-left">
+					<img src="./image/GH2.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content seogwipo_western">
+				<div class="content-left">
+					<img src="./image/GH2.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content jeju_center">
+				<div class="content-left">
+					<img src="./image/GH3.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content jeju_center">
+				<div class="content-left">
+					<img src="./image/GH3.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content seogwiop_enter">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>	
+			<div class="content seogwiop_enter">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content jeju_eastern">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content jeju_eastern">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>		
+			<div class="content seogwipo_eastern">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>
+			<div class="content seogwipo_eastern">
+				<div class="content-left">
+					<img src="./image/GH1.png">
+				</div>
+				<div class="content-right">
+					<h2 id = "ghName">솔게스트 하우스</h2>
+						
+					<p> 놀러오세요
+						정말 좋아요
+						뷰가 멋져요
+					</p>
+					<div id ="price" >
+						<p >￦60,000</p>
+					</div>
+				</div>
+			</div>				
+			
+		</div>
+		
+	</div>
+
+	<footer>
+		<div>
+			<section id="about">
+				<h3>About</h3>
+				<p>
+					회사소개 <br /> <a href="mailto:uhseoohgea@gmail.com">uhseoohgea@gmail.com</a>
+				</p>
+			</section>
+			<section id="security">
+				<h3>개인정보 취급 방침</h3>
+				<ul>
+					<li><a href="#">개요</a></li>
+					<li><a href="#">문의처</a></li>
+				</ul>
+			</section>
+			<section id="notice">
+				<h3>공지사항</h3>
+				<ul>
+					<li><a href="#">오시는 길</a></li>
+					<li><a href="#">오류시 문의사항</a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+
+</body>
+</html>
