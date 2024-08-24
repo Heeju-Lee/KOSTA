@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  
+		//입력폼을 선택자로 지정
+		$('input[name=name]').val("james");
+		$('#front').html('<h3>화면입니다.</h3>')
+	});
+</script>
+</head>
+<body>
+	<form action="jq04_result.jsp" method="get">
+		<input type="text" name="name">
+		<input type="submit">
+	</form>
+	<div id="front"></div>
+</body>
+</html>
+
+
+

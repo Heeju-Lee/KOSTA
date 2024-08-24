@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(()=>{
+	//1. body 태그의 모든 자식들을 선택자로 지정
+	//$('body *').css('border','1px solid purple');//자손
+	
+	$('body>*').css('border','1px solid purple');//직계
+});
+
+</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>Apple</li>
+			<li>Tomato</li>
+			<li>Banana</li>
+			<li>Peach</li>
+			<li>Graph</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+
+
+

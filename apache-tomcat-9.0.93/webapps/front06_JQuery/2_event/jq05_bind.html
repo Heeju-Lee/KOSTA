@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bind::하나 이상의 이벤트를 묶는 기능 :: mouseenter, mouseleave</title>
+<style>
+	.reverse{background:black; color:yellow;}
+	.colorR{color: crimson}
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  
+		//1.
+		$('#btn').bind('click',()=>{
+			$('h2').addClass('colorR');
+		});
+		
+		//2. 
+		$('h2').bind({
+			mouseenter:function(){
+				//이벤트가 적용중인 태그 자기자신
+				$(this).addClass('reverse');
+			},
+			mouseleave:function(){
+				$(this).removeClass('reverse');
+			}
+		});//bind
+	});//ready
+</script>
+</head>
+<body>
+	<h2>As of jQuery 3.0, .bind() has been deprecated. It was superseded by the .on() method for attaching event handlers to a document since jQuery 1.7, so its use was already discouraged. For earlier versions, the .bind() method is used for attaching an event handler directly to elements. Handlers are attached to the currently selected elements in the jQuery object, so those elements must exist at the point the call to .bind() occurs. For more flexible event binding, see the discussion of event delegation in .on().</h2>
+	<h2>As of jQuery 3.0, .bind() has been deprecated. It was superseded by the .on() method for attaching event handlers to a document since jQuery 1.7, so its use was already discouraged. For earlier versions, the .bind() method is used for attaching an event handler directly to elements. Handlers are attached to the currently selected elements in the jQuery object, so those elements must exist at the point the call to .bind() occurs. For more flexible event binding, see the discussion of event delegation in .on().</h2>
+	<h2>As of jQuery 3.0, .bind() has been deprecated. It was superseded by the .on() method for attaching event handlers to a document since jQuery 1.7, so its use was already discouraged. For earlier versions, the .bind() method is used for attaching an event handler directly to elements. Handlers are attached to the currently selected elements in the jQuery object, so those elements must exist at the point the call to .bind() occurs. For more flexible event binding, see the discussion of event delegation in .on().</h2>
+	
+	<button id='btn'>버튼</button>
+</body>
+</html>
+
+
+
+
+

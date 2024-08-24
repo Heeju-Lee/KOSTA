@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.larger{ width:200px; border:2px solid tomato;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  
+		//1. 마우스가 이미지 영역 안으로 들어가면 커지고/ 나오면 다시 원래대로
+		$('img').hover(function name() {
+			$(this).addClass('larger');
+		}, function () {
+			$(this).removeClass('larger');
+			
+		})//hover
+	});
+</script>
+</head>
+<body>
+	<h1>Bigger Image..</h1>
+	<img src="../image/1.jpg" width="100">
+	<img src="../image/2.jpg" width="100">
+	<img src="../image/3.jpg" width="100">
+	<img src="../image/4.jpg" width="100">
+</body>
+</html>

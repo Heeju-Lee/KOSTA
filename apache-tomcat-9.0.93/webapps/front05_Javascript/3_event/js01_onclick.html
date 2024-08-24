@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>1. button onclick 속성에 함수를 연결</title>
+<script type="text/javascript">
+
+function push() {
+	//1. content 부분의 element를 받아와서
+	let content = document.getElementById("content");
+	alert(content);//객체가 출력된다. [object HTMLParagraphElement]
+				   //Element : <startTag> content </endTag> 전체를 의미
+	
+	//2. 받아온 부분의 영역에 Hello JavaScript Event...내용으로 변경..글자색을 RED로
+	content.innerHTML = "<h2><font color=red>Hello JavaScript Event</font></h2>";
+}
+</script>
+
+</head>
+<body>
+<h1>JavaScript란?</h1>
+<p id="content">JavaScript를 사용해서 HTML Body부분의 내용을 변경합니다.</p>
+<button onclick="push()">CLICK ME</button>
+</body>
+
+</html>

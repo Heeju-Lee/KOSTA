@@ -1,0 +1,40 @@
+<!-- 
+폼에 입력된 값을 가지고 서버로 전송하는 방법
+자바스크립트에서 서버로 페이지를 이동하는 가장 대표적인 방법
+submit() 말고 
+location.href="url"
+이 방법을 한번 사용해 보겠다. 
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('input[type="button"]').on('click',()=>{
+		let id = $('#userId').val();
+		//let id = document.getElementById("userId").value;
+		let name = $('input[name="userName"]').val();
+		let address = $(':text[name=userAddr]').val();
+		
+		location.href="05_result2.jsp?kId="+id+"&kName="+name+"&KAddr="+address;
+	});
+});
+</script>
+</head>
+<body>
+<h2>Form에서 입력한 값 자바스크립트에서 받아서 서버로 전송하기</h2>
+<h3>2. form.submit() 함수를 사용</h3>
+<form id="memberFrm">
+아이디 : <input type="text" name="userId" id="userId"><br/><br/>
+이  름 : <input type="text" name="userName" id="userName"><br/><br/>
+주  소 : <input type="text" name="userAddr" id="userAddr"><br/><br/>
+<input type="button" value="DataSend" onclick="push()">
+</form>
+</body>
+</html>

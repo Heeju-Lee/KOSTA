@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	/* 
+		1. id, name 폼에 공란을 확인...공백일 때 alert창 알아서 띄우고, 마우스 포커스 맞추고, 페이지 안넘어가게
+		2. checkbox...하나 이상의 취미를 선택하도록... 하나도 선택안하면 알아서 메세지 띄우기
+		3. 			  하나의 취미를 선택했다면 $.each()로 선택한 취미를 하나의 alert창에 띄우기
+		4. 서버로 전송하기 직전...confirm창 사용..."3개의 취미를 선택하셨습니다...전송하시겠습니까?" 확인 / 취소
+	*/
+	
+		
+		$('#frm').submit((e)=>{
+			let id = $('#id').val();
+			let name = $('#name').val();
+			let checkCnt = $('input[type="checkbox"]:checked').length;
+			let str ='';
+			
+			//1.
+			if(id=='' || name==''){
+				alert("아이디와 이름은 필수 입력값입니다. 입력을 확인해주세요.")
+				if(id=='') $('#id').focus();
+				else $('#name').focus();
+				return false;
+			};
+			
+			//2.
+			if(checkCnt<1){
+				alert("하나 이상의 취미를 선택해주세요.");
+				return false;
+			};
+			
+			//3.
+			
+			if(checkCnt>0){
+				checkCnt.each(function(index, item){
+					str += $(item).val() + ' ';
+				});	
+				alert("선택하신 취미는 "+str);
+			};
+			
+			//4.
+			if(!confirm(checkCnt+"개의 취미를 선택하셨습니다...전송하시겠습니까?")){
+				return false;
+			};
+			
+		});//submit
+	});//ready
+</script>
+</head>
+<body>
+<form action="06_result.jsp" id="frm">
+ 	ID <input type="text" name="id" id="id"><p>
+ 	NAME <input type="text" name="name" id="name"><p>
+ 	
+ 	<strong>당신의 취미를 고르세요.</strong><p>
+ 	<input type="checkbox" name="hobby" value="fishing">낚시<br>
+ 	<input type="checkbox" name="hobby" value="origami">종이접기<br>
+ 	<input type="checkbox" name="hobby" value="moutain climbing">등산<br>
+ 	<input type="checkbox" name="hobby" value="listen to music">음악듣기<br>
+
+ 	<input type="submit" value="SEND" onclick="push()">
+ 	
+
+</form>
+</body>
+</html>
