@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. addOptionBtn 클릭하면 함수 호출되도록 
+    $('#addOptionBtn').one('click',function(){
+        let arr = ['이찬영', '백도현', '김믿음', '박혜린'];
+        
+        // arr의 요소 값들을 select>option...each
+        $.each(arr, function(index, item){
+            let option = '<option value='+ item +'>'+item +'</option>';
+            $('#friend').append(option);
+        });
+        //$('#addOptionBtn').unbind();
+    });//click
+    
+    //deleteOptionBtn을 클릭하면 함수호출...
+    	//select태그의 직계자식태그 option을 삭제 
+     $('#deleteOptionBtn').click(function(){
+    	 $('#friend>option').remove;
+     });
+   });
+    	
+</script>
+</head>
+<body>
+	<input type="button" value="옵션 생성" id="addOptionBtn">
+	<input type="button" value="옵션 삭제" id="deleteOptionBtn">
+	<select id="friend">	
+	
+	</select>
+</body>
+</html>

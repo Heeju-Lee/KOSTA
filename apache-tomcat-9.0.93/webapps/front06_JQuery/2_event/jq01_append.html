@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>append(), after() | prepend()</title>
+<style>
+	body{
+		padding:50px;
+	}
+	
+	div{
+		border:2px solid #bbb;
+		padding:10px;
+		margin:10px auto;
+		background-color: #eee;
+	}
+	
+	span{
+		display:block;
+		width:65px;
+		font:bold 12px Arial;
+		color:white;
+		background:black;
+		padding:5px 10px;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  
+		$('div')
+		.append("<span>1. Append </span>")//tag뒤에 content를 부착
+		.after("<span>2. After </span>")
+		.prepend("<span>3. prepend </span>")
+		.before("<span>4. before </span>");
+	});
+</script>
+</head>
+<body>
+<div>
+The .append() method inserts the specified content as the last child of each element in the jQuery collection (To insert it as the first child, use .prepend()).
+
+The .append() and .appendTo() methods perform the same task. The major difference is in the syntax-specifically, in the placement of the content and target. With .append(), the selector expression preceding the method is the container into which the content is inserted. With .appendTo(), on the other hand, the content precedes the method, either as a selector expression or as markup created on the fly, and it is inserted into the target container.
+</div>
+</body>
+</html>

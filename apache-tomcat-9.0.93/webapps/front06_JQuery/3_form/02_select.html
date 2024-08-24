@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. 버튼의 타이틀을 받아와서 resultView 영역에 출력
+	$('#createBtn').on('click',function(){
+		let title = $(this).val();
+		//$('#resultView').html(title);
+		
+		//$('#resultView').append(title+"<p>");
+		
+		//3. html()함수를 사용하는데 ... append()썼을때와 동일한 결과
+		let result = $('#resultView').html();
+		$('#resultView').html(result+title+"<p>");
+	});//on
+	
+	//4. select폼에서 option 값을 변경할때마다 이벤트 호출...
+	//5. 선택한 서비스 지점이 resultView에 출력 되도록 html()..
+	$('select').on('change',function(){
+		let option = $(this).val();
+		
+		let result2 = $('#resultView').html();
+		$('#resultView').html(result2+option+'<p>');
+	});
+	
+});
+</script>
+</head>
+<body>
+<input type="button" value="버튼 클릭시 동적으로 문자열 생성" id="createBtn">
+<select id="createSel">
+	<option>삼성전자 서비스 선릉지점</option>
+	<option>삼성전자 서비스 강남지점</option>
+	<option>삼성전자 서비스 어린이 대공원 단지점</option>
+	<option>삼성전자 서비스 강북지점</option>
+	<option>삼성전자 서비스 신촌지점</option>
+</select>
+
+<div id="resultView"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

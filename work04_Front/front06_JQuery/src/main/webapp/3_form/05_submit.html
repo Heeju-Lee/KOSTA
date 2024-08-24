@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#memberFrm').submit((e)=>{
+		let id = $('#userId').val();
+		//let id = document.getElementById("userId").value;
+		let name = $('input[name="userName"]').val();
+		let address = $(':text[name=userAddr]').val();
+		
+		//하승현님의 정보를 서버로 전송하시겠습니까? 확인(true) / 취소(false)
+		if(confirm(name+"님의 정보를 서버로 전송하시겠습니까?")){}
+		else e.preventDefault();
+	});
+});
+</script>
+</head>
+<body>
+<h2>Form에서 입력한 값 자바스크립트에서 받아서 서버로 전송하기</h2>
+<h3>1. form.submit() 함수를 사용</h3>
+<form action="05_result.jsp" method="get" id="memberFrm">
+아이디 : <input type="text" name="userId" id="userId"><br/><br/>
+이  름 : <input type="text" name="userName" id="userName"><br/><br/>
+주  소 : <input type="text" name="userAddr" id="userAddr"><br/><br/>
+<input type="submit" value="DataSend">
+</form>
+</body>
+</html>
