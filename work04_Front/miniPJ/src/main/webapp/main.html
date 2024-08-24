@@ -2,33 +2,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-
-<link rel="stylesheet" href="https://webfontworld.github.io/daegu/DalseoHealing.css">
-
-
-
+<title>메인페이지</title>
 
 <!-- JQuery cdn -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <!-- slick CSS - cdn -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
 <!-- slick css-theme cdn  -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
 <!-- Bootstrap cdn -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- Bootstrap css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
 <!-- slick JS - cdn -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <!-- ChartJS CSS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- font family -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 
-
-<title>메인페이지</title>
 
 <style type="text/css">
 	@font-face {
@@ -45,288 +41,294 @@
     font-style: normal;
     }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 
-/* 전체 레이아웃 기본 스타일 */
-body {
-	font-family : 'PTAnboR',  -serif !important;
-}
+	body {
+		font-family : 'PTAnboR',  -serif !important;
+	}
 
-/* header */ 
-header {
-	display: flex;
-	align-items: center; /* 세로 가운데 정렬 */
-	justify-content: space-between; /* 좌우 끝 정렬 */
-	border-bottom: 1px gray;
-	padding: 0 70px; /* 좌우 패딩 추가 */
-	height: 70px;
-	background-color: #f8f8f8; /* 배경색 */
-}
+	/* header */ 
+	header {
+		display: flex;
+		align-items: center; 
+		justify-content: space-between; /* 좌우 끝 정렬 */
+		border-bottom: 1px gray;
+		padding: 0 70px; 
+		height: 70px;
+		background-color: #f8f8f8;
+	}
 
-header .headerLink {
-	display: flex;
-	align-items: center; /* 세로 가운데 정렬 */
-	gap: 30px;	/* 링크 간 간격  */
-}
+	header .headerLink {
+		display: flex;
+		align-items: center; 
+		gap: 30px;	/* 링크 간 간격  */
+	}
 
-header h1{
-	font-size: 30px;
-	margin: 0px;
-}
+	header h1{
+		font-size: 30px;
+		margin: 0px;
+	}
 
-header h5 {
-	color: black;
-	margin: 0; /* 제목 요소의 기본 마진 제거 */
-}
+	header h5 {
+		color: black;
+		margin: 0; /* 제목 요소의 기본 마진 제거 */
+	}
 
-header a {
-	color: black;
-	text-decoration: none;
-}
+	header a {
+		color: black;
+		text-decoration: none;
+	}
 
-header a:hover {
-	color: #666; /* 링크에 마우스 올릴 때 색상 변경 */
-	text-decoration: none;
-}
+	header a:hover {
+		color: #666; 
+		text-decoration: none;
+	}
 
-/* footer */
-footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-top: 1px gray;
-	background-color: #f8f8f8;
-	padding: 20px 0;
-}
+	/* footer */
+	footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-top: 1px gray;
+		background-color: #f8f8f8;
+		padding: 20px 0;
+	}
 
-footer div {
-	display: flex;
-	justify-content: space-between;
-	width: 940px;
-	color: #777;
-}
+	footer div {
+		display: flex;
+		justify-content: space-between;
+		width: 940px;
+		color: #777;
+	}
 
-footer section {
-	width: 300px;
-}
+	footer section {
+		width: 300px;
+	}
 
-footer h6 {
-	color: black;
-	margin-bottom: 10px; /* 제목 하단 간격 추가 */
-}
+	footer h6 {
+		color: black;
+		margin-bottom: 10px; 
+	}
 
-footer a {
-	color: #333;
-	text-decoration: none;
-}
+	footer a {
+		color: #333;
+		text-decoration: none;
+	}
 
-footer ul {
-	margin: 0;
-	padding-left: 20px; /* 리스트 패딩 왼쪽에 추가 */
-	list-style: square;
-	color: #565656;
-}
+	footer ul {
+		margin: 0;
+		padding-left: 20px;
+		list-style: square;
+		color: #565656;
+	}
 
-footer ul li a {
-	display: block;
-	text-decoration: none;
-	font-family: 'GmarketSansMedium';
-}
+	footer ul li a {
+		display: block;
+		text-decoration: none;
+		font-family: 'GmarketSansMedium';
+	}
 
-/* main */
-.container{
-	margin: 0 auto;
-}
+	/* main */
+	.container{
+		margin: 0 auto;
+	}
 
-.search{
-	padding: 80px 50px;
-	background-size: cover;
-	height : 450px;
-	background-image: url("image/BG.png");
-	text-align: center; /* 중앙 정렬 */
-	position: relative;
-	overflow: hidden;
+	.search{
+		padding: 80px 50px;
+		height : 450px;
+		text-align: center;
+		position: relative;
+	}
 
-}
+	#bgImgSliding {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0; /* 슬라이드 이미지를 가장 뒤로 보냄 */
+	}
 
-.search::before{
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center; /* 배경 이미지 중앙 정렬 */
-	background-color: rgba(231, 235, 40, 0.767);
-	opacity: 0.5; 
+	#bgImgSliding img {
+		width: 100%;
+		height: 450px;
+	}
 
-	z-index: 0; 
-}
+	.search::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center; 
+		background-color: rgba(231, 235, 40, 0.767);
+		/* background-color: white; */
+		opacity: 0.3; 
 
-.search p{
-	color: #f8f8f8;
-	font-size : 50px;
-	position: relative; /* 텍스트가 배경 위에 위치하도록 설정 */
-	z-index: 1;
-	text-shadow:  -2px 0px rgb(0, 0, 0), 0px 1px rgb(0, 0, 0), 1px 0px rgb(0, 0, 0), 0px -1px rgb(0, 0, 0);
-}
+		z-index: 1; 
+	}
 
-.serachBorder{
-	border : 1px solid gray; 
-	background-color: white; 
-	border-radius: 20px;
-	display : inline-block;
-	padding : 10px;
-	z-index: 1;	
-	position: relative;
+	.search p{
+		color: #f8f8f8;
+		font-size : 50px;
+		position: relative; /* 텍스트가 배경 위에 위치하도록 설정 */
+		z-index: 1;
+		/* text-shadow:  -2px 0px black,
+						 0px 1px black,
+						  1px 0px black,
+						   0px -1px black; */
+		text-shadow: 3px 3px 2px black;				   
+	}
 
-	width : 400px;
-}
+	.serachBorder{
+		border : 1px solid gray; 
+		background-color: white; 
+		border-radius: 20px;
+		display : inline-block;
+		z-index: 1;	
+		position: relative;
 
-.serachBorder span{ 
-	padding : 10px;
-}
+		width : 500px;
+	}
 
-.search select{
-	padding-right: 100px;
-}
+	#textAreaNm{
+		display: inline-block;
+	}
+	.serachBorder span{ 
+		padding : 10px;
+	}
 
-.searchResult{
-	margin : 100px auto;
-	width: 50%; /* 가운데 정렬을 위해 너비 설정 */
-}
+	.search select{
+		padding-right: 100px;
+	}
 
-.searchResult p{
-	font-family: "GmarketSansMedium";
-}
-.searchResult .content{
+	.searchResult{
+		margin : 100px auto;
+		width: 50%; /* 가운데 정렬을 위해 너비 설정 */
+	}
 
-	display: flex;
-	flex-direction: row;/* 수평 방향 나열 */
-	align-items: center; /* 세로 가운데 정렬 */
-	width: 100%;
-	height : 200px;
-	margin-bottom: 40px;
-	border-radius: 10px;
-	border: 2px solid lightgray;
-}
+	.searchResult p{
+		font-family: "GmarketSansMedium";
+	}
 
-
-.searchResult .content-left{
-	width: 30%; /* 왼쪽 콘텐츠의 너비를 40%로 설정 */
-	height : 100%;
-	margin-right: 20px;
-}
-.searchResult .content-left img{
-	object-fit: cover; 
-	width: 100%;
-	height: 100%;
-	border-radius: 10px;
-}
-
-.searchResult .content-right{
-	width: 70%; /* 오른쪽 콘텐츠의 너비를 60%로 설정 */
-	height: 100%;
-	padding-top: 30px;
-	display: flex;
-	flex-direction: column; /* 수직 방향 정렬*/
-}
-
-.searchResult .content-right #price{
-	margin-top: auto; /* 남는 공간을 위로 밀어 가격을 아래로 배치 */
-	margin-right: 30px;
-	padding-bottom: 20px;
-	text-align: right; /* 가격을 오른쪽 정렬 */
-}
-
-.searchResult .ghName{
-	font-size: 20;
-}
+	.searchResult .content{
+		display: flex;
+		flex-direction: row;/* 수평 방향 나열 */
+		align-items: center; 
+		width: 100%;
+		height : 200px;
+		margin-bottom: 40px;
+		border-radius: 10px;
+		border: 2px solid lightgray;
+	}
 
 
-/* start */
-#desc{
-    text-indent: 0; /* 첫 줄 들여쓰기 제거 */
-}
+	.searchResult .content-left{
+		width: 30%; /* 왼쪽 콘텐츠의 너비를 30%로 설정 */
+		height : 100%;
+		margin-right: 20px;
+	}
+	.searchResult .content-left img{
+		object-fit: cover; 
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+	}
 
-.star-ratings-fill{
-	-webkit-text-fill-color: crimson;
-}
+	.searchResult .content-right{
+		width: 70%; /* 오른쪽 콘텐츠의 너비를 70%로 설정 */
+		height: 100%;
+		padding-top: 30px;
+		display: flex;
+		flex-direction: column; /* 수직 방향 정렬*/
+	}
 
-.shadow{
-	box-shadow: 5px 5px 15px #565656 ;
-}
+	.searchResult .content-right #price{
+		margin-top: auto; /* 남는 공간을 위로 밀어 가격을 아래로 배치 */
+		margin-right: 30px;
+		padding-bottom: 20px;
+		text-align: right; /* 가격 오른쪽 정렬 */
+	}
+
+	.searchResult .ghName{
+		font-size: 20;
+	}
 
 
-/* Map */
-.serachBorder a, a:focus, a:hover, a:active {
-    color: #202020;
-    outline: hidden;
-    text-decoration: none;
-}
+	/* star */
+	#desc{
+		text-indent: 0; /* 첫 줄 들여쓰기 제거 */
+	}
 
-.serachBorder span{
-	margin-bottom: 20px;
-}
+	.star-ratings-fill{
+		-webkit-text-fill-color: crimson;
+	}
 
-#hotel_zone{
-	position: absolute;
-	top: 60px;
-	left : 0;
-	width: 400px;
-	z-index: 100;
-	background-color: rgba(211, 211, 211, 0.767);
+	.shadow{
+		box-shadow: 5px 5px 15px #565656 ;
+	}
 
- 	border: 3px solid red;
-	cursor: pointer;
-}
- 
-.cls-1.off {
-    fill: #e9e9e9;
-}
 
+	/* Map */
+	.serachBorder a, a:focus, a:hover, a:active {
+		color: #202020;
+		outline: hidden;
+		text-decoration: none;
+	}
+
+	#hotel_zone{
+		position: absolute;
+		display: none;
+		left : 0;
+		width: 500px;
+		z-index: 100;
+		background-color: rgba(211, 211, 211, 0.767);
+		cursor: pointer;
+	}
+
+	.popup-typeA_title {
+		padding-top: 10px;
+	}
+
+	button#decide_cta {
+		padding: 2px;
+	}
+
+	svg.us {
+		width: 400px;
+	}
+	
+	.cls-1.off {
+		fill: #e9e9e9;
+	}
 
 </style>
 
 <script type="text/javascript">
 	$(function() {
 
-		// option이 선택 되면 
-		$("#searchloc").on("change", function(){
-			let locArr = [	"EA",
-							"JE",
-							"WE",
-							"SE",
-							"WS",
-							"ES"];
-							
-			let location = $(this).val();
-			//console.log(location);
+		//MainImg 슬라이드
+		$('#bgImgSliding').slick({
+	    	slidesToShow: 1,
+	    	slidesToScroll: 1,	
+	   		pauseOnHover : true,
+	    	autoplay: true,
+	    	autoplaySpeed: 1500,
+			// fade: true,
+			arrows: false
+	    });
 
-			$.each(locArr, function(index, iteam){
-				$("." +iteam).css("display","flex");
-			});	
-			
-			$.each(locArr, function(index, iteam){
-				//console.log(iteam)
-				if( iteam != location)
-					$("." +iteam).css("display","none");
-			});			
-		
-		});
-
-		//content가 선택되면 LocalStorage 저장하기
+		//게하 선택하면 게하 제목을 LocalStorage 저장
 		$(".content").on("click", function(){
 
 			let key = $(this).find("h2.ghName").attr("class");
 			let value = $(this).find("h2.ghName").attr("value");
-
-			//console.log(key + " " + value);
 
 			localStorage.setItem( key, value);
 
@@ -340,70 +342,88 @@ footer ul li a {
 			$(this).removeClass("shadow")
 		});
 
-
-		//Map
+		 
+	/*제주도 지도*/
+		
+		//모달 띄우기
 		$("#textAreaNm").on("click", function (){
-			let test = $("#hotel_zone").css("display");
-			console.log(test);
+			$("#hotel_zone").css("display","block");
 			$("#hotel_zone").fadeIn();
-			console.log(test);
-
 		});
 
-		$("#decide_cta").on('click', function (e){
-			e.preventDefault();
-			const modal = $(this).parents('#hotel_zone');
-			modal.fadeOut();
-		});
+		// 지역 선택
+		$(".quick_mapArea").on("click", ".cls-1", function() {
 
-		$(".cls-1.off").on("click",function(){
+			if ($(this).hasClass("off")) {
+				changeOn.call(this);  
+			} 
+			else if ($(this).hasClass("on")) { //DOM에 올릴 때는 없고 추후 생성됨 -> 이벤트 위임 필요
+				changeOff.call(this); 
+			}
+			else return;
+
+			let selectedAreas = []; 
+			selectedAreas= $("g[class=on]").map(function( idx, value) {
+				return $(this).data("areanm");
+			});
+			let areasStr = selectedAreas.get();
+
+			$(".serachBorder #textAreaNm").text(areasStr).css("color", "rgb(255, 153, 0)");
 			
-			if( $(this).css("fill") == "rgb(255, 153, 0)"){
-				//alert("");
-				$(this).css("fill","#e9e9e9");
-			}
-			else {
-				//alert("");
-				$(this).css("fill","rgb(255, 153, 0)" );
-
-
-				//.serachBorder #textAreaNm
-				//data-areanm
-				console.log($(this).parent().attr("data-areanm"));
-			}
 		});
 
-		$("#decide_cta").on("click",function(){
+		let locArr = [	"EA","JE","WE","SE","WS","ES"];
+		$("#apply_btn").on("click",function(){
 
+			let selectedArr = $(".serachBorder #textAreaNm").text().trim().split(',');
 
+			//이전 검색 기록 초기화
+			$.each(locArr, function(index, iteam){
+				$("." +iteam).css("display","flex");
+			});		
+
+			if((selectedArr.length == 1 && selectedArr[0]=="") || (selectedArr.length ==1 && selectedArr[0] == '제주도' )){
+				alert("지역을 하나 이상 선택해주세요");
+				$("#textAreaNm").text("제주도").css("color", "gray");
+				return;
+			} 
+
+			for(let i =0; i <locArr.length; i++){
+				let areaName = $(".serachBorder g[id=" + locArr[i]).data("areanm");
+				
+				if( selectedArr.indexOf(areaName) == -1){
+					console.log("없는 지역 " + $("g[data-areanm='" +areaName + "'").val);
+
+					$(".content[data-areanm='" +areaName + "']"  ).css("display","none");
+				}	
+			}
+
+			// 모달 사라지기
+			$(this).parents('#hotel_zone').fadeOut();
 		});	 
 		
 	});
 
+	function changeOff() {
+		$(this).css("fill", "#e9e9e9");
+		$(this).parent().attr("class", "off");
+		$(this).attr("class", "cls-1 off"); // on 상태에서 off로 전환
+	}
 
-	/*
-	
-	<g id="EA" data-area="EA" data-areanm="제주시 동부"
-	<g id="JE" data-area="JE" data-areanm="시내권
-	<g id="WE" data-area="WE" data-areanm="제주시 서부
-	<g id="SE" data-area="SE" data-areanm="서귀포시
-	<g id="WS" data-area="WS" data-areanm="서귀포시 서부"
-	<g id="ES" data-area="ES" data-areanm="서귀포시 동부"
-
-	*/
-	
-
-</script>
+	function changeOn() {
+		$(this).css("fill", "rgb(255, 153, 0)");
+		$(this).parent().attr("class", "on");
+		$(this).attr("class", "cls-1 on"); // off 상태에서 on으로 전환
+	}
+	</script>
 </head>
 <body>
 
-	<header>
-		<div class="header-left" style="width:200px; text-align: center;">
-
-		</div>
+	<header id ="top">
+		<div class="header-left" style="width:200px; text-align: center;"></div>
 		<div style="width:200px; text-align: center; display: flex; flex-direction: row; align-items: center;">
-		<img src="image/logo.png" id="logo" width="60px" height="60px">
-		<h1>이디오랜</h1>
+			<img src="image/logo.png" id="logo" width="60px" height="60px">
+			<h1>이디오랜</h1>
 		</div>
 		<div class="header-right">
 			<div class="headerLink" style="width:200px; text-align: center;">
@@ -416,11 +436,17 @@ footer ul li a {
 	<!-- main  -->
 	<div class ="main">
 		<div class = "search">
+			<div id="bgImgSliding">
+				<img src="image/BG1.png"> 
+				<img src="image/BG2.png"> 
+				<img src="image/BG3.png"> 
+				<img src="image/BG4.png"> 
+			</div>
 			<p>설렘 가득한 제주에서 추억을 만들어보세요</p>
 			<div class = "serachBorder">
 				<span id ="question">어디로 떠나시겠습니까?</span>
-				<a id="textAreaNm" style ="color :gray"> 제주도</a>
-				<div id="hotel_zone" class="popup-typeA hotel-zone" style="display: block;">
+				<span id="textAreaNm" style ="color :gray">제주도</span>
+				<div id="hotel_zone" class="popup-typeA hotel-zone">
 					<div class="popup-typeA_title">지역선택</div>
 					<div class="searchTabGroup stay">
 						<div class="searchGroup quick_mapArea">
@@ -487,7 +513,7 @@ footer ul li a {
 							</svg>
 						</div>
 					</div>
-					<button class="map--btn map--btn_default" id="decide_cta">
+					<button class="map--btn map--btn_default" id="apply_btn">
 						적용
 					</button>
 				</div>
@@ -497,7 +523,7 @@ footer ul li a {
 	
 		<div class = "searchResult">
 
-			<div class="content EA" >
+			<div class="content EA" data-areanm="제주시 동부" >
 				<div class="content-left">
 					<img src="./image/GH1.jpg">
 				</div>
@@ -511,7 +537,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content JE">
+			<div class="content JE" data-areanm="시내권">
 				<div class="content-left">
 					<img src="./image/GH2.jpg">
 				</div>
@@ -525,7 +551,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content WE">
+			<div class="content WE" data-areanm="제주시 서부">
 				<div class="content-left">
 					<img src="./image/GH3.jpg">
 				</div>
@@ -539,7 +565,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content SE">
+			<div class="content SE" data-areanm="서귀포시">
 				<div class="content-left">
 					<img src="./image/GH4.jpg">
 				</div>
@@ -553,12 +579,12 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content WS">
+			<div class="content WS" data-areanm="서귀포시 서부">
 				<div class="content-left">
 					<img src="./image/GH5.jpg">
 				</div>
 				<div class="content-right">
-					<h2 class = "ghName" value ="솔게스트 하우스">솔게스트 하우스</h2>
+					<h2 class = "ghName" value ="하이티 게스트 하우스">하이티 게스트 하우스</h2>
 					<p> <span class ="star-ratings-fill">★★★</span><br>
 						제주버스터미널 도보 1분/공항차량7분<br>
 					</p>
@@ -567,7 +593,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content ES">
+			<div class="content ES" data-areanm="서귀포시 동부">
 				<div class="content-left">
 					<img src="./image/GH6.jpg">
 				</div>
@@ -581,7 +607,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>	
-			<div class="content EA">
+			<div class="content EA" data-areanm="제주시 동부">
 				<div class="content-left">
 					<img src="./image/GH7.jpg">
 				</div>
@@ -595,7 +621,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content JE">
+			<div class="content JE" data-areanm="시내권">
 				<div class="content-left">
 					<img src="./image/GH8.jpg">
 				</div>
@@ -609,7 +635,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content WE">
+			<div class="content WE" data-areanm="제주시 서부">
 				<div class="content-left">
 					<img src="./image/GH9.jpg">
 				</div>
@@ -623,7 +649,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>		
-			<div class="content SE">
+			<div class="content SE" data-areanm="서귀포시">
 				<div class="content-left">
 					<img src="./image/GH10.jpg">
 				</div>
@@ -637,7 +663,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content WS">
+			<div class="content WS"  data-areanm="서귀포시 서부">
 				<div class="content-left">
 					<img src="./image/GH11.jpg">
 				</div>
@@ -651,7 +677,7 @@ footer ul li a {
 					</div>
 				</div>
 			</div>
-			<div class="content SE">
+			<div class="content SE" data-areanm="서귀포시">
 				<div class="content-left">
 					<img src="./image/GH12.jpg">
 				</div>
@@ -691,5 +717,6 @@ footer ul li a {
 		</div>
 	</footer>
 
+	 
 </body>
 </html>
