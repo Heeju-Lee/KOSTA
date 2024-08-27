@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+<servlet>
+	<servlet-name>GreetServlet</servlet-name>
+	<servlet-class>web.servlet.greet.GreetServlet</servlet-class>
+
+	<!-- 컨테이너 차원의 서블릿 초기화정보 매핑 -->
+	<init-param>
+		<param-name>GREET</param-name>
+		<param-value>Hello Welcome to Olymphic Games</param-value>
+	</init-param>
+	
+	<load-on-startup> 1 </load-on-startup>
+	
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>GreetServlet</servlet-name>
+	<url-pattern>/GS</url-pattern>
+</servlet-mapping>
+</web-app>

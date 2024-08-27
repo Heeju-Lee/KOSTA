@@ -18,7 +18,7 @@ public class FormServlet extends HttpServlet {
 
 	// 클라이언트의 요청이 서버상으로 들어오면 doGet() 컨테이너에 의해서 호출
 	// 이때 폼에 입력된 값이 요청정보를 타고 서버로 전달된다.
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 1. 폼에 입력된 값 id, pass를 받아온다. ... id, pass
 		String id = request.getParameter("userId");

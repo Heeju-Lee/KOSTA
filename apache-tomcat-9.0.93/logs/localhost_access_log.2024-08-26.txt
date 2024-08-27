@@ -58,3 +58,6 @@
 0:0:0:0:0:0:0:1 - - [26/Aug/2024:15:53:52 +0900] "GET /web02_FormServlet/FS HTTP/1.1" 200 90
 0:0:0:0:0:0:0:1 - - [26/Aug/2024:15:53:58 +0900] "GET /web02_FormServlet/form.html HTTP/1.1" 200 452
 0:0:0:0:0:0:0:1 - - [26/Aug/2024:15:54:08 +0900] "GET /web02_FormServlet/FS?userId=KOSTA&userPass=9999 HTTP/1.1" 200 91
+127.0.0.1 - - [26/Aug/2024:16:04:35 +0900] "GET / HTTP/1.1" 200 11428
+0:0:0:0:0:0:0:1 - - [26/Aug/2024:16:04:36 +0900] "GET /web02_FormServlet/form.html HTTP/1.1" 200 452
+0:0:0:0:0:0:0:1 - - [26/Aug/2024:16:04:43 +0900] "GET /web02_FormServlet/FS?userId=KOSTA&userPass=9999 HTTP/1.1" 405 825
