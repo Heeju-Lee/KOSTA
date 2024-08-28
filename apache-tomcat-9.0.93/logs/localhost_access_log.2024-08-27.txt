@@ -159,3 +159,11 @@
 0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:21:36 +0900] "GET /workshop03/login.html HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:21:40 +0900] "POST /workshop03/MainServlet HTTP/1.1" 200 320
 0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:21:46 +0900] "POST /workshop03/MainServlet HTTP/1.1" 200 320
+127.0.0.1 - - [27/Aug/2024:16:24:07 +0900] "GET / HTTP/1.1" 200 11428
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:24:08 +0900] "GET /workshop03/login.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:24:16 +0900] "POST /workshop03/MainServlet HTTP/1.1" 200 320
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:26:24 +0900] "GET /workshop03/login.html HTTP/1.1" 200 1167
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:26:30 +0900] "POST /workshop03/MainServlet HTTP/1.1" 200 320
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:26:33 +0900] "GET /workshop03/MainServlet HTTP/1.1" 405 825
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:29:22 +0900] "GET /workshop03/login.html HTTP/1.1" 200 1185
+0:0:0:0:0:0:0:1 - - [27/Aug/2024:16:29:26 +0900] "POST /workshop03/MainServlet HTTP/1.1" 200 320
