@@ -103,3 +103,5 @@
 0:0:0:0:0:0:0:1 - - [28/Aug/2024:16:39:45 +0900] "GET /web07_ConnectionPool/ConnectionPool.jsp HTTP/1.1" 500 4905
 127.0.0.1 - - [28/Aug/2024:16:40:10 +0900] "GET / HTTP/1.1" 200 11428
 0:0:0:0:0:0:0:1 - - [28/Aug/2024:16:40:11 +0900] "GET /web07_ConnectionPool/ConnectionPool.jsp HTTP/1.1" 500 4895
+127.0.0.1 - - [28/Aug/2024:16:43:55 +0900] "GET / HTTP/1.1" 200 11428
+0:0:0:0:0:0:0:1 - - [28/Aug/2024:16:44:08 +0900] "GET /web07_ConnectionPool/ConnectionPool.jsp HTTP/1.1" 200 270
