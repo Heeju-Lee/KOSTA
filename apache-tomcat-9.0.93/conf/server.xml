@@ -162,7 +162,10 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\web09_Cookie" path="/web09_Cookie" reloadable="true" source="org.eclipse.jst.jee.server:web09_Cookie"/></Host>
+      <Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\workshop06" path="/workshop06" reloadable="true" source="org.eclipse.jst.jee.server:workshop06">
+
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="30" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/kosta?serverTimezone=Asia/Seoul" username="root"/>
+</Context></Host>
     </Engine>
   </Service>
 </Server>

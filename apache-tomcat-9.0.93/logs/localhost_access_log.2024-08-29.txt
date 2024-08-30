@@ -124,3 +124,7 @@
 0:0:0:0:0:0:0:1 - - [29/Aug/2024:17:16:33 +0900] "GET /web09_Cookie/CookieServlet HTTP/1.1" 404 837
 127.0.0.1 - - [29/Aug/2024:17:17:13 +0900] "GET / HTTP/1.1" 200 11428
 0:0:0:0:0:0:0:1 - - [29/Aug/2024:17:17:15 +0900] "GET /web09_Cookie/CookieServlet HTTP/1.1" 404 837
+127.0.0.1 - - [29/Aug/2024:17:19:19 +0900] "GET / HTTP/1.1" 200 11428
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:17:19:19 +0900] "GET /web09_Cookie/cookie.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:17:19:21 +0900] "GET /web09_Cookie/CookieServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:17:19:22 +0900] "GET /web09_Cookie/getCookie.jsp HTTP/1.1" 200 385
