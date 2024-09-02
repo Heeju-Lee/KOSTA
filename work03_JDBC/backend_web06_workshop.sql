@@ -43,6 +43,6 @@ commit;
 SELECT * FROM book;
 DESC book;
 
-DELETE FROM book where title='이희주';
+DELETE FROM book where author='이희주';
 
 -- isbn, title, catalogue, nation, publish_date, publisher, author, price, currency, description

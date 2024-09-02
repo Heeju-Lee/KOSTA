@@ -38,8 +38,10 @@ public class FindServlet extends HttpServlet {
 		/*
 		 * 0. 한글처리 양방향 1. 폼값을 받아서 2. DAO리턴받고, 비즈니스 로직을 호출한다. 3. 반환값 바인딩 4. 네비게이션
 		 */
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
+		/*
+		 * request.setCharacterEncoding("utf-8");
+		 * response.setContentType("text/html;charset=utf-8");
+		 */
 
 		// 1. 폼값을 받아서
 		String id = request.getParameter("id");

@@ -32,9 +32,10 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-
+		/*
+		 * request.setCharacterEncoding("utf-8");
+		 * response.setContentType("text/html;charset=utf-8");
+		 */
 		// 1. 폼값을 받아서
 		String id = request.getParameter("id").trim();
 		String password = request.getParameter("password").trim();
