@@ -104,6 +104,8 @@ public class FrontController extends HttpServlet {
 	
 	protected void searchBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String option = request.getParameter(getServletName());
+		String keyword = request.getParameter(getServletName());
+		
 		try {
 			BookDAOImpl.getInstance().searchBooks(option, keyword);
 						

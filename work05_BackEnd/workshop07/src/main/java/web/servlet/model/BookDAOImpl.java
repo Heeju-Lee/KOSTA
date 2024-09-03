@@ -176,4 +176,10 @@ public class BookDAOImpl implements BookDAO{
 			return list;
 		}
 	}
+
+	@Override
+	public ArrayList<Book> searchBooks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

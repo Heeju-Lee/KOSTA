@@ -12,10 +12,10 @@
 <div style="float: right;">
 	<form action="front.do?command=search">
 		<select>
-			<option value="all">전체</option>
-			<option value="title">도서명</option>
-			<option value="publisher">출판사</option>
-			<option value="price">가격</option>
+			<option value="all" name="all">전체</option>
+			<option value="title" name="title">도서명</option>
+			<option value="publisher" name="publisher">출판사</option>
+			<option value="price" name="price">가격</option>
 		</select>
 		<input type="text" name="keyword">
 		<input type="submit" value="검색">
@@ -39,11 +39,6 @@
 	      <td>${list.price}</td>
 	    </tr>
     </c:forEach>
-    <tr>
-      <td>11/14</td>
-      <td>박수진</td>
-      <td>여</td>
-    </tr>
   </table>
 </div>
 
