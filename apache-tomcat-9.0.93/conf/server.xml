@@ -162,7 +162,13 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\web07_ConnectionPool" path="/web07_ConnectionPool" reloadable="true" source="org.eclipse.jst.jee.server:web07_ConnectionPool">
+      <Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\web17_CafeMember_Ajax" path="/web17_CafeMember_Ajax" reloadable="true" source="org.eclipse.jst.jee.server:web17_CafeMember_Ajax">
+
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="30" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/kosta?serverTimezone=Asia/Seoul" username="root"/>
+</Context><Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\workshop07_solution" path="/workshop07_solution" reloadable="true" source="org.eclipse.jst.jee.server:workshop07_solution">
+
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="30" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/kosta?serverTimezone=Asia/Seoul" username="root"/>
+</Context><Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\workshop08" path="/workshop08" reloadable="true" source="org.eclipse.jst.jee.server:workshop08">
 
 	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="30" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/kosta?serverTimezone=Asia/Seoul" username="root"/>
 </Context></Host>
