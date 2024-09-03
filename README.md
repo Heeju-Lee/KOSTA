@@ -1,3 +1,1 @@
 # KOSTA
-
-![Uploading image.png…]()
