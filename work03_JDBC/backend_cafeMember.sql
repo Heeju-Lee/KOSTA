@@ -13,3 +13,8 @@ select @@autocommit;
 SELECT * from member;
 
 delete from member;
+
+delete from book;
+
+select *from book;
+commit;

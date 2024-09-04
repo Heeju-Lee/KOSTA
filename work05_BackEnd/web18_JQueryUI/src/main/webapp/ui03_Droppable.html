@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery UI Draggable - Default functionality</title>
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.14.0/themes/sunny/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style type="text/css">
+#clothing {
+	width: 600px;
+	float: left;
+	margin-left: 25px;
+}
+
+#cart {
+	width: 400px;
+	float: left;
+	margin-left: 50px;
+	padding: 5px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+<script>
+	$(function() {
+		//1. accordion
+		$('#catalogue').accordion({
+			hightStyle : 'content'
+		});
+
+		//2. draggable
+		$("#catalogue li").draggable({
+			helper : 'clone',
+			appendTo : '#cart'
+		});
+
+		$("#cart ol").droppable({
+		  drop: function(event,ui) {
+			$(this).find('.placeholder').remove();
+			let uidrag = ui.draggable.text();
+		  	$(this).append('<li>'+uidrag+'</li>');    
+		  }
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="clothing">
+		<h1 class="ui-widget-header">Shop Catalogue</h1>
+		<!-- 드래그 하는 대상들 -->
+		<div id="catalogue">
+			<h2>
+				<a href="#">상의류</a>
+			</h2>
+			<div>
+				<ul>
+					<li>블라우스</li>
+					<li>셔츠</li>
+					<li>니트</li>
+					<li>가디건</li>
+					<li>버버리</li>
+				</ul>
+			</div>
+			<h2>
+				<a href="#">하의류</a>
+			</h2>
+			<div>
+				<ul>
+					<li>스커트</li>
+					<li>정장바지</li>
+					<li>숏팬츠</li>
+					<li>청바지</li>
+				</ul>
+			</div>
+			<h2>
+				<a href="#">액세서리</a>
+			</h2>
+			<div>
+				<ul>
+					<li>반지갑</li>
+					<li>장지갑</li>
+					<li>손목시계</li>
+					<li>벨트</li>
+					<li>목걸이</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Droppable 하는 영역을 추가... 일종의 Cart 개념 -->
+	<div id="cart">
+		<h1 class="ui-widget-header">Clothing Cart</h1>
+		<div class="ui-widget-content">
+			<ol>
+				<li class="placeholder">Drop here!!</li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>
