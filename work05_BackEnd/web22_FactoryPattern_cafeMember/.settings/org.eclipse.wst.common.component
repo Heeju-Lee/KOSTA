@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="web22_FactoryPattern_cafeMember">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <property name="context-root" value="web22_FactoryPattern_cafeMember"/>
+        <property name="java-output-path" value="/web22_FactoryPattern_cafeMember/build/classes"/>
+    </wb-module>
+</project-modules>
