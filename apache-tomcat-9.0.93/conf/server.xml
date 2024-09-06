@@ -165,6 +165,9 @@
       <Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\workshop11" path="/workshop11" reloadable="true" source="org.eclipse.jst.jee.server:workshop11">
 
 	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="30" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/kosta?serverTimezone=Asia/Seoul" username="root"/>
+</Context><Context docBase="C:\KOSTA_LHJ\apache-tomcat-9.0.93\webapps\workshop11_2" path="/workshop11_2" reloadable="true" source="org.eclipse.jst.jee.server:workshop11_2">
+
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="30" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/kosta?serverTimezone=Asia/Seoul" username="root"/>
 </Context></Host>
     </Engine>
   </Service>
