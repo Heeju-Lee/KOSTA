@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MySQL의 핵심(!)이 되는 설정문서 -->
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- 1. dbconn.properties Wiring(file과 file간의 연결) -->
+<properties resource="config/dbconn.properties"/>
+
+<!-- 2. VO 객체 Wiring -->
+<typeAliases>
+	<typeAlias alias="user" type="mybatis.services.domain.User"/>
+</typeAliases>
+
+<!-- 3. JDBC 환경구축 -->
+<environments default="aa">
+	<environment id="aa">
+		<transactionManager type="JDBC"></transactionManager>
+		<dataSource type="UNPOOLED"> <!-- DriverManager방식 -->
+			<property name="driver" value="${jdbc.mysql.driver}"/>
+			<property name="url" value="${jdbc.mysql.url}"/>
+			<property name="username" value="${jdbc.mysql.username}"/>
+			<property name="password" value="${jdbc.mysql.password}"/>
+		</dataSource>
+	</environment>	
+</environments>
+
+<!-- 4. sql구문의 모듈화 Wiring -->
+<mappers>
+	<mapper resource="mapper/mybatis-userservice-mapping.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping01.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping02.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping03.xml"/>
+</mappers>
+
+</configuration>
