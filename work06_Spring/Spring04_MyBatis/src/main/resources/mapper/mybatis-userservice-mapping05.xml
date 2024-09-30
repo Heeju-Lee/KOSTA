@@ -11,7 +11,8 @@
  
 <!-- SQL definition -->
 <!-- db의 column명과 vo의 field가 상이할 경우 -->
-<mapper namespace="UserMapper03">
+<!-- 여기까지 하면 MyBatis로 CRUD 다 한거다. -->
+<mapper namespace="UserMapper05">
 	<insert id="addUser" parameterType="user">
 		INSERT 
 		INTO users(user_id, user_name, password, age, grade, reg_date) 

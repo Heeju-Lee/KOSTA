@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- MySQL의 핵심(!)이 되는 설정문서 -->
+<!-- MySQL의 핵심(!)이 되는 설정문서 
+:
+DB Access 하는데 필요한 모든 것들이 담김
+-->
 
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-<!-- 1. dbconn.properties Wiring(file과 file간의 연결) -->
+<!-- 1. DB서버정보를 가지고 있는 상수값 -->
+<!-- DriverManager(UNPOOLED) :: MyBatis Framework 단위테스트용임 -->
 <properties resource="config/dbconn.properties"/>
 
-<!-- 2. VO 객체 Wiring -->
+ 
+<!-- Null값을 허용하는 옵션 지정 : Oracle인 경우 반드시 지정해야하는 옵션 !!반드시 NULL 대문자 -->
+<settings>
+	<setting name="jdbcTypeForNull" value="NULL"/>
+	
+	<!-- camelcase 적용이 제대로 되지 않은 경우가 있어 너무 믿으면 안된다. -->
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+
+<!-- 2. 정보를 저장하고 있는 vo 클래스-->
 <typeAliases>
 	<typeAlias alias="user" type="mybatis.services.domain.User"/>
 </typeAliases>
 
-<!-- 3. JDBC 환경구축 -->
-<environments default="aa">
+<!-- 3. JDBC 환경구축 :: DataSource (POOLED)-->
+
+<!-- DriverManager(UNPOOLED) :: MyBatis Framework 단위테스트용임 -->
+<!-- <environments default="aa">
 	<environment id="aa">
 		<transactionManager type="JDBC"></transactionManager>
-		<dataSource type="UNPOOLED"> <!-- DriverManager방식 -->
+		<dataSource type="UNPOOLED"> DriverManager방식
 			<property name="driver" value="${jdbc.mysql.driver}"/>
 			<property name="url" value="${jdbc.mysql.url}"/>
 			<property name="username" value="${jdbc.mysql.username}"/>
 			<property name="password" value="${jdbc.mysql.password}"/>
 		</dataSource>
 	</environment>	
-</environments>
+</environments> -->
 
-<!-- 4. sql구문의 모듈화 Wiring -->
+ 
+<!-- 4. sql구문의 모듈화 Wiring :: -->
 <mappers>
 	<mapper resource="mapper/mybatis-userservice-mapping.xml"/>
 	<mapper resource="mapper/mybatis-userservice-mapping01.xml"/>
 	<mapper resource="mapper/mybatis-userservice-mapping02.xml"/>
 	<mapper resource="mapper/mybatis-userservice-mapping03.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping05.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping07.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping08.xml"/>
+	<mapper resource="mapper/mybatis-userservice-mapping10.xml"/>
 </mappers>
 
 </configuration>

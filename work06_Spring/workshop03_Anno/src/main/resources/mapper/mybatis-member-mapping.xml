@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- SQL definition -->
+<mapper namespace="MemberMapper">
+
+	<!-- SQL 모듈화 -->
+	<sql id="select-member">
+		SELECT id, password, name, address
+		FROM member	
+	</sql>
+
+	<sql id="orderby-id-desc">
+		ORDER BY id DESC
+	</sql>
+	
+	<sql id="orderby-id-asc">
+		ORDER BY id ASC
+	</sql>
+
+	<insert id="registerMember" parameterType="member">
+		INSERT 
+		INTO member(id, password, name, address)
+		VALUES (#{id},#{password},#{name},#{address})
+	</insert>
+	
+	<delete id="deleteMember" parameterType="string">
+		DELETE FROM member
+		WHERE id=#{VALUE}
+	</delete>
+	
+	<update id="updateMember" parameterType="member">
+		UPDATE member 
+		SET password=#{password}
+		WHERE id=#{id}
+	</update>
+	
+	<select id="showAllMember" resultType="member">
+		<include refid="select-member"/>
+		<include refid="orderby-id-desc"></include>
+	</select>
+	
+	<select id="getMember" parameterType="string" resultType="member">
+		<include refid="select-member"/>
+		<where>
+			<if test="name !=null">
+				name LIKE #{name}
+			</if>
+			<if test="address !=null">
+				OR address LIKE #{address}
+			</if>
+		</where>
+		<include refid="orderby-id-asc"/>
+	</select>
+	
+	<select id="idExist" parameterType="string" resultType="member">
+		<include refid="select-member"/>
+		WHERE id=#{VALUE}
+	</select>
+	
+	<select id="login" parameterType="member" resultType="member">
+		<include refid="select-member"/>
+		WHERE id=#{id} AND password=#{password}
+	</select>
+
+</mapper>

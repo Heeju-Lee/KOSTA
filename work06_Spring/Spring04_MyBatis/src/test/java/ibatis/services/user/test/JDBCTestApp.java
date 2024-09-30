@@ -1,6 +1,6 @@
 package ibatis.services.user.test;
 
-import ibatis.services.domain.User;
+import mybatis.services.domain.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
