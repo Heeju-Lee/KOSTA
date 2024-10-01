@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--	
+	mybatis-userservice-mapping.xml : SQL 를 갖는 설정화일 (MetaData) 
+	- MyBatis Framework 은 XML MetaData를 사용 SQL구문을 관리하며,
+	  (SQL은 xml 을 통해 적절히 캡슐화 되어 애플리케이선 의 외부로 분리함)
+	- SQL문의 입력(?) / 출력(?)을 매핑한다.  <== 아래의 select element 참조
+ -->
+ 
+<!-- SQL definition -->
+<!-- db의 column명과 vo의 field가 상이할 경우 -->
+<mapper namespace="UserMapper03">
+	<insert id="addUser" parameterType="user">
+		INSERT 
+		INTO users(user_id, user_name, password, age, grade, reg_date) 
+		VALUES (#{userId}, #{userName}, #{password}, #{age}, #{grade}, #{regDate})
+	</insert>
+
+	<update id="updateUser" parameterType="user">
+		UPDATE users
+		SET user_name=#{userName}
+		WHERE user_id=#{userId}
+	</update>
+	
+	<delete id="removeUser" parameterType="string">
+		DELETE FROM users
+		WHERE user_id=#{VALUE}	
+	</delete>
+
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 사용자 정의 bean :: id="user01" :: setter값 주입 :: 단순파라미터 값을 주입:: id="01유저" age="01"-->
+	<bean id="user01" class="spring.service.domain.User">
+		<property name="userId" value="01유저" />
+		<property name="age" value="01" />
+	</bean>
+	
+	<!-- API Bean :: id="password" class="java.lang.String" :: 생성자 주입 :: 단순 파라미터 값 "7777"  -->
+	<bean id="password" class="java.lang.String">
+		<constructor-arg value="7777"/>
+	</bean>
+	
+	<!-- 사용자 정의 bean :: id="user02" :: setter값 주입 :: 단순파라미터 값을 주입:: id="02유저" age="02" password(위 객체를 패스워드로)-->
+	<bean id="user02" class="spring.service.domain.User">
+		<property name="userId" value="02유저" />
+		<property name="password" ref="password" />
+		<property name="age" value="02" />
+	</bean>
+	
+	<!-- 사용자 정의 bean :: id="user03" :: DI 없음-->
+	<bean id="user03" class="spring.service.domain.User"/>
+	
+	<!-- 사용자 정의 bean :: id="user04" :: 생성자 값 주입(04유저, 04, 0404) :: 객체 생성자 주입 순서를 봐주거나-->
+	<bean id="user04" class="spring.service.domain.User">
+		<constructor-arg index="2" value="04유저"/>
+		<constructor-arg index="0" value="04"/>
+		<constructor-arg index="1"  value="0404"/>
+	</bean>
+	
+	<!-- 사용자 정의 bean :: id="user05" :: 생성자 값 주입(05유저, 04, 0404) :: index, type-->
+	<bean id="user05" class="spring.service.domain.User">
+		<constructor-arg type="String" value="05유저"/>
+		<constructor-arg index="0" value="05"/>
+		<constructor-arg index="1"  value="0505"/>
+	</bean>
+	
+</beans>
+
+		
