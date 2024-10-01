@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="work05_BackEnd">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web01_Generic/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web01_GenericServlet2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web02_FormServlet/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web03_LifeCycle/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web04_ServletConfig/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web04_ServletConfig2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web05_Forward/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web06_Redirect/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web08_CafeMember_DB/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web09_Cookie/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web10_HttpSession/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web11_CafeMember_Login/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web12_FrontControllerPattern/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web13_EL/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web15_CafeMember_EL_JSTL/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web16_Ajax/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web17_CafeMember_Ajax/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop02/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop03_2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop03_3/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop03/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop04/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop05/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop06/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop07_solution/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop07/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop08_solution/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop08/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/workshop09/src/main/java"/>
+        <property name="context-root" value="work05_BackEnd"/>
+        <property name="java-output-path" value="/work05_BackEnd/web01_Generic/build/classes"/>
+    </wb-module>
+</project-modules>
