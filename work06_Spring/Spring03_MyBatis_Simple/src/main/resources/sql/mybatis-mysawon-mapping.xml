@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- SQL definition -->
+<mapper namespace="SawonMapper">
+	<!-- id = 비즈니스 로직명 parameterType: 인자값(alias명)-->
+	<insert id="sawonAdd" parameterType="mySawon">
+		INSERT 
+		INTO mysawon(id, pwd, name, age, hiredate)
+		VALUES (#{id},#{pwd},#{name},#{age},curdate())
+	</insert>
+	
+	<select id="sawonList" resultType="mySawon">
+		SELECT 
+		num, id, name, age, hiredate
+		FROM mysawon
+		ORDER BY num DESC
+	</select>
+</mapper>

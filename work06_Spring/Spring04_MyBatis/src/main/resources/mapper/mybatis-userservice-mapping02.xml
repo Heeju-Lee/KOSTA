@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--	
+	mybatis-userservice-mapping.xml : SQL 를 갖는 설정화일 (MetaData) 
+	- MyBatis Framework 은 XML MetaData를 사용 SQL구문을 관리하며,
+	  (SQL은 xml 을 통해 적절히 캡슐화 되어 애플리케이선 의 외부로 분리함)
+	- SQL문의 입력(?) / 출력(?)을 매핑한다.  <== 아래의 select element 참조
+ -->
+ 
+<!-- SQL definition -->
+<!-- db의 column명과 vo의 field가 상이할 경우 -->
+<mapper namespace="UserMapper02">
+	<select id="getUser01" parameterType="string" resultType="user">
+		SELECT
+		user_id AS userId,
+		user_name AS userName,
+		password,
+		age,
+		grade,
+		reg_date AS regDate
+		FROM users	
+		WHERE user_id LIKE #{VALUE}
+	</select>
+	
+	<select id="getUser02" parameterType="user" resultType="user">
+		SELECT
+		user_id AS userId,
+		user_name AS userName,
+		password,
+		age,
+		grade,
+		reg_date AS regDate
+		FROM users	
+		WHERE user_id LIKE #{userId}
+	</select>
+	
+	<!-- 아이디가 user로 시작하는 사람을 검색....와일드 카드 %, like연산자 사용  -->
+	<select id="getUser03" parameterType="string" resultType="user">
+		SELECT
+		user_id AS userId,
+		user_name AS userName,
+		password,
+		age,
+		grade,
+		reg_date AS regDate
+		FROM users	
+		WHERE user_id LIKE CONCAT(#{VALUE}, '%')
+	</select>
+	
+	<!-- 아이디가 01로 끝나는 사람을 검색....와일드 카드 %, like연산자 사용  -->
+	<select id="getUser04" parameterType="user" resultType="user">
+		SELECT
+		user_id AS userId,
+		user_name AS userName,
+		password,
+		age,
+		grade,
+		reg_date AS regDate
+		FROM users	
+		WHERE user_id LIKE CONCAT('%',#{userId})
+	</select>
+	
+</mapper>

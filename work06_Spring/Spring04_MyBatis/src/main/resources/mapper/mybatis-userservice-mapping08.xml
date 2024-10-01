@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mybatis-userservice-mapping.xml : SQL 를 갖는 설정화일 (MetaData) - MyBatis 
+	Framework 은 XML MetaData를 사용 SQL구문을 관리하며, (SQL은 xml 을 통해 적절히 캡슐화 되어 애플리케이선 
+	의 외부로 분리함) - SQL문의 입력(?) / 출력(?)을 매핑한다. <== 아래의 select element 참조 -->
+
+<!-- SQL definition -->
+<!-- SQL 구문의 모듈화 :: 재사용성을 높힌다. :: sql, include tag -->
+<mapper namespace="UserMapper08">
+	<resultMap type="user" id="UserSelectRM">
+		<result property="userId" column="user_id" />
+		<result property="userName" column="user_name" />
+		<result property="password" column="password" />
+		<result property="age" column="age" />
+		<result property="grade" column="grade" />
+		<result property="regDate" column="reg_date" />
+	</resultMap>
+	
+	<sql id="select-users">
+		SELECT 
+			user_id, user_name, password, age, grade, reg_date
+		FROM users 
+	</sql>
+	
+	<sql id="orderby-userid-desc">
+		ORDER BY user_id DESC
+	</sql>
+	
+	<select id="getUserList01" parameterType="user" resultMap="UserSelectRM">
+		<include refid="select-users"/>
+		WHERE password=#{password}	
+	</select>
+	
+	<select id="getUserList" parameterType="user" resultMap="UserSelectRM">
+		<include refid="select-users"/>
+		<where>
+			<if test="userName !=null">
+				user_name LIKE #{userName}
+			</if>
+			<if test="age !=null">
+				OR age LIKE #{age}
+			</if>
+		</where>
+		<include refid="orderby-userid-desc"/>
+	</select>
+</mapper>

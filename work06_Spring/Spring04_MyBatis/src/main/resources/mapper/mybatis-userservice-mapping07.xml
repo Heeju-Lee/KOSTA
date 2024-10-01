@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mybatis-userservice-mapping.xml : SQL 를 갖는 설정화일 (MetaData) - MyBatis 
+	Framework 은 XML MetaData를 사용 SQL구문을 관리하며, (SQL은 xml 을 통해 적절히 캡슐화 되어 애플리케이선 
+	의 외부로 분리함) - SQL문의 입력(?) / 출력(?)을 매핑한다. <== 아래의 select element 참조 -->
+
+<!-- SQL definition -->
+<!-- 1. 테이블 컬럼명과 필드명이 다를 때 ResultMap 사용법을 알아야 한다. 
+		select문에서만 당연히 사용된다. 
+		CamelCase 규칙을 따르지 않는 필드일 때 반드시 사용.
+		
+	 2. 동적쿼리 사용법	
+		
+-->
+<mapper namespace="UserMapper07">
+	<resultMap type="user" id="UserSelectRM">
+		<result property="userId" column="user_id" />
+		<result property="userName" column="user_name" />
+		<result property="password" column="password" />
+		<result property="age" column="age" />
+		<result property="grade" column="grade" />
+		<result property="regDate" column="reg_date" />
+	</resultMap>
+	
+	<!-- 패스워드가 user객체의 user01인 사람을 검색 -->
+	<!-- 정적쿼리...where절 조건이 달라지면 새로운 쿼리를 만들어야 한다. -->
+	<select id="getUserList01" parameterType="user" resultMap="UserSelectRM">
+		SELECT 
+			user_id, user_name, password, age, grade, reg_date
+		FROM users 
+		WHERE password=#{password}	
+	</select>
+	
+	<!-- 동적쿼리 
+		 where절 조건이 달라져도 하나의 select 쿼리문으로 모든 쿼리문을 실행할 수 있다.
+		 
+		 userName이 홍길동이고 age가 30살인 사람을 검색....
+		 WHERE userName='홍길동' AND age=30 ..........1)
+		 WHERE userName='홍길동' .........2)
+		 WHERE age=30 ..........3)
+		 모든 사람 검색 ........4)
+		 
+		 select문 하나로 1)~4) 까지의 모든 쿼리문이 실행될 수 있다.
+		 ...동적인 조건에 따라서 다르게 동작
+	-->
+	<select id="getUserList" parameterType="user" resultMap="UserSelectRM">
+		SELECT 
+			user_id, user_name, password, age, grade, reg_date
+		FROM users 
+		<where>
+			<if test="userName !=null">
+				user_name LIKE #{userName}
+			</if>
+			<!-- 논리연산자는 두번째 맨앞에 넣어준다 첫번째 맨뒤가 아님 -->
+			<if test="age !=null">
+				OR age LIKE #{age}
+			</if>
+		</where>
+		ORDER BY user_id DESC
+	</select>
+		
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<!-- 주사위 A, B, C, Player02 4개의 빈을 정의  -->
+	<bean id="diceA" class="spring.service.dice.impl.DiceAImpl"></bean>
+	<bean id="diceB" class="spring.service.dice.impl.DiceBImpl"></bean>
+	<bean id="diceC" class="spring.service.dice.impl.DiceCImpl"></bean>
+
+<!-- 
+	player01 빈은 A주사위를 가지고 노는 빈....setter로 주입 
+	palyer01.setDice(new DiceAImpl()) 과 동일 property = set / 객체는 ref 로 주입
+-->
+    <bean id="player01" class="spring.service.dice.play.Player02">
+        <property name="dice" ref="diceA"/>
+    </bean>
+    
+	<!-- 
+	player02 빈은 B주사위를 가지고 노는 빈....setter로 주입 
+	palyer02.setDice(new DiceBImpl()) 과 동일 property = set / 객체는 ref 로 주입
+-->
+    <bean id="player02" class="spring.service.dice.play.Player02">
+        <property name="dice" ref="diceB"/>
+    </bean>
+    
+    	<!-- 
+	player03 빈은 C주사위를 가지고 노는 빈....setter로 주입 
+	palyer03.setDice(new DiceBImpl()) 과 동일 property = set / 객체는 ref 로 주입
+-->
+    <bean id="player03" class="spring.service.dice.play.Player02">
+        <property name="dice" ref="diceC"/>
+    </bean>
+    
+    
+    	<!-- 
+	player04 빈은 A주사위를 가지고 노는 빈....setter로 주입 
+	palyer04.setDice(new DiceBImpl()) 과 동일 property = set / 객체는 ref 로 주입
+-->
+    <bean id="player04" class="spring.service.dice.play.Player02">
+        <property name="dice" ref="diceA"/>
+    </bean>
+ 
+</beans>
+
+		
