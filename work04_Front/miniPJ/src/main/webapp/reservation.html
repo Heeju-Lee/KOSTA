@@ -483,6 +483,58 @@ footer ul li a {
 
 		updateName();
 
+		function updateRoomCharge(){
+			var roomNum = $("#roomSel option:selected").val();
+
+			// 기존 방 가격 업데이트를 호출
+			updateContent($('#guesthouseName').text());
+
+			if(roomNum=="102"){
+				ratePerNight = 40000;
+			}
+			if(roomNum=="103"){
+				ratePerNight = 45000;
+			}
+
+			updateTotal()
+
+		}
+
+		function updateTotal() {
+			//date 가져오기
+			const today = new Date();
+			const checkInDate = new Date($('#check-in').val());
+			const checkOutDate = new Date($('#check-out').val());
+			//date 차이 계산
+			const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
+			const nightDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+			const personCount = parseInt($('#person').val(), 10) || 1;
+
+			if (checkInDate && checkOutDate && checkOutDate > checkInDate) {
+			
+				const totalAmount = ratePerNight * nightDifference * personCount;
+
+				//변경사항 적용
+				$('#total-amount').text(`total : ₩${totalAmount.toLocaleString()}`);
+				$('#night-rate').text(`₩${ratePerNight.toLocaleString()} x ${nightDifference} night(s)`);
+			} else if (checkOutDate <= checkInDate){
+				alert('체크아웃 날짜는 체크인 날짜보다 늦어야 합니다.');
+			} else if (checkInDate<today || checkOutDate<today){
+				alert('체크인 & 체크아웃 날짜는 오늘 이후로 설정해야 합니다.');
+				$('#check-in').val('');
+				$('#check-out').val('');
+			} else {
+				defaultP()
+			}
+		}
+
+		//이벤트 발생 시 
+		$('#roomSel').on('change', updateRoomCharge);
+		$('#check-in').on('change', updateTotal);
+		$('#check-out').on('change', updateTotal);
+		$('#person').on('change', updateTotal);
+
+
 		//MainImg 슬라이드
 	    $('#mainImg').slick({
 	    	slidesToShow: 1,
@@ -493,9 +545,10 @@ footer ul li a {
 	    	autoplaySpeed: 1500,
 	    });
 		
+		$("#reserve").click(reserve);
 		//reserv button click event
 		function reserve() {
-
+			alert("예약이 완료됐습니다.");
 		}//reserve
 
 		//chart-js(평점 bar chart)
@@ -763,7 +816,7 @@ footer ul li a {
 						<input type="number" name="person" id="person" class="form-control form-control-md" min="1" max="2" required>
 					</div>
 						<div id="submit">
-						<button id="reserve" onclick="reserve()" class="btn btn-lg">예약하기</button>
+						<button id="reserve" class="btn btn-lg">예약하기</button>
 					</div>
 					<div id="totalP">
 						<h6 id="night-rate"></h6>

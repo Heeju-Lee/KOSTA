@@ -1,9 +1,0 @@
-@charset "EUC-KR";
-
-.alert-box{
-	background: #0564BA;
-	color: #400000;
-	padding:20px;
-	border-radius: 5px;
-	display: none;/*   ¼û±â±â */
-}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 마지막 mapping.xml 파일
+	 여기에 지금까지 했던 모든 내용을 다 집어 넣겠다.
+	 resultMap, sql모듈화, 동적쿼리, a select, all select, insert, delete, update -->
+	 
+<mapper namespace="UserMapper10">
+	<resultMap type="user" id="UserSelectRM">
+		<result property="userId" column="user_id" />
+		<result property="userName" column="user_name" />
+		<result property="password" column="password" />
+		<result property="age" column="age" />
+		<result property="grade" column="grade" />
+		<result property="regDate" column="reg_date" />
+	</resultMap>
+	
+	<!-- sql 모듈화 -->
+	<sql id="select-users">
+		SELECT 
+			user_id, user_name, password, age, grade, reg_date
+		FROM users 
+	</sql>
+	
+	<sql id="orderby-userid-desc">
+		ORDER BY user_id DESC
+	</sql>
+	
+
+	<insert id="addUser" parameterType="user">
+		INSERT 
+		INTO users(user_id, user_name, password, age, grade, reg_date) 
+		VALUES (#{userId}, #{userName}, #{password}, #{age}, #{grade}, #{regDate})
+	</insert>
+
+	<update id="updateUser" parameterType="user">
+		UPDATE users
+		SET user_name=#{userName}
+		WHERE user_id=#{userId}
+	</update>
+	
+	<delete id="removeUser" parameterType="string">
+		DELETE FROM users
+		WHERE user_id=#{VALUE}	
+	</delete>
+	
+	<!-- 정적쿼리 :: 특정한 아이디를 가지는 사람을 검색-->
+	<select id="getUser" parameterType="string" resultMap="UserSelectRM">
+		<include refid="select-users"/>
+		WHERE user_id=#{VALUE}
+	</select>
+	
+	<!-- 동적쿼리 :: parameterType으로 VO가 들어감 !!! (중요)-->
+	<select id="getUserList" parameterType="user" resultMap="UserSelectRM">
+		<include refid="select-users"/>
+		<where>
+			<if test="userName !=null">
+				user_name LIKE #{userName}
+			</if>
+			<if test="age !=null">
+				OR age LIKE #{age}
+			</if>
+		</where>
+		<include refid="orderby-userid-desc"/>
+	</select>
+</mapper>

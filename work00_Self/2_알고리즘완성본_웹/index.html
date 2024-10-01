@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Java Call</title>
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#exec1").click(function() {
+			var words = $("#words").val();
+			$.ajax({
+				type:'post',
+				url:'front.do?command=count',
+				data:{'words':words},
+				
+				error:function(xhr, status, message){
+					alert("error :"+message);
+				},
+				success:function(result){
+					$('#result1').html(result);
+				}
+			});						
+		});//click		
+		
+		$("#exec2").click(function() {
+			var fname = $("#fname").val();
+			$.ajax({
+				type:'post',
+				url:'front.do?command=kickboard',
+				data:{'fname':fname},
+				
+				error:function(xhr, status, message){
+					alert("error :"+message);
+				},
+				success:function(data){
+					$('#result2').html(data);
+				}
+			});			
+		});	//click
+		
+	});
+</script>
+<style type="text/css">
+.container{
+	display: flex;
+	justify-content: space-around;
+	margin: 100px;
+}
+.quest{
+	border-radius: 20px;
+	border: 10px dotted DodgerBlue;
+	padding: 50px;
+	width: 500px; height: 350px;
+	background-color: rgb(234,234,234);
+}
+h2{
+		height: 50px;
+		color: Violet;
+		
+	}
+.kick{	
+
+	width : 150px;
+}
+*{
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+.button {
+  background-color:MediumSeaGreen; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button4 {border-radius: 12px;}
+
+input[type=button]{
+	margin-top: 20px;
+}
+#result1, #result2 {
+	font-size : 1.8em;
+	color: red;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		
+		<div id="q1"  class="quest">
+				<h2>단어세기</h2>
+				<div><span id="ins">입력 문자열 : </span><textarea  id="words" cols="45" rows="5"></textarea> </div>
+				<div><input type="button" id="exec1" class="button button4" value="실 행"> 가장 많이 나온 단어 :	<span id="result1"  ></span></div>			
+		</div>
+		<div id="q2" class="quest">
+			<h2>Kickboard</h2>
+			<div><span class="kick">입력 파일명:</span><input type="text" id="fname" ></div>
+			<div> <input type="button"	id="exec2" class="button button4" value="실 행"> 갈수 있는 경로의 수 : <span id="result2">  </span></div>
+		</div>
+	</div>
+</body>
+</html>
