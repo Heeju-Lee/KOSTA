@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?compositeMetadataRepository version='1.0.0'?>
+<repository 
+     name='m2e-wtp 1.4.x Releases repository'    
+     type='org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository' 
+     version='1.0.0'>
+  <properties size='1'>
+    <property name='p2.timestamp' value='9'/>
+  </properties>
+
+  <children size='6'>
+    <!-- add new versions here -->
+    <child location="1.4.3.20191209-1849" />
+    <child location="1.4.2.20190530-0057" />
+    <child location="1.4.1.20181128-2152" />
+    <child location="1.4.0.20180606-2005" />
+    <child location="https://download.eclipse.org/technology/m2e/releases/1.12"/>
+    <child location="../../signed/mavenarchiver/0.17.5/" />
+  </children>
+
+</repository>

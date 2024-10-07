@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server>
+	<Service name="Catalina">
+		<add:Connector executor="tomcatThreadPool"
+				port="${https.port:8443}"
+				protocol="org.apache.coyote.http11.Http11NioProtocol"
+				connectionTimeout="20000"
+				redirectPort="${https.port:8443}"
+				acceptCount="100"
+				maxKeepAliveRequests="15"
+				keystoreFile="${ssl.keystore.location}"
+				keystorePass="${ssl.keystore.password}"
+				keystoreType="${ssl.keystore.type}"
+				keyAlias="${ssl.key.alias}"
+				keyPass="${ssl.key.password}"
+				SSLEnabled="true"
+				scheme="https"
+				secure="true"
+				sslProtocol="${ssl.protocol:TLS}"
+				ciphers="${cipher.list:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
+TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
+TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA,
+TLS_ECDH_RSA_WITH_AES_256_CBC_SHA,
+TLS_DHE_RSA_WITH_AES_256_CBC_SHA,
+TLS_DHE_DSS_WITH_AES_256_CBC_SHA,
+TLS_DH_RSA_WITH_AES_256_CBC_SHA,
+TLS_DH_DSS_WITH_AES_256_CBC_SHA,
+TLS_RSA_WITH_AES_256_CBC_SHA,
+TLS_DHE_RSA_WITH_AES_128_CBC_SHA,
+TLS_RSA_WITH_AES_128_CBC_SHA,
+TLS_DHE_DSS_WITH_AES_128_CBC_SHA,
+TLS_DH_RSA_WITH_AES_128_CBC_SHA,
+TLS_DH_DSS_WITH_AES_128_CBC_SHA,
+TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,
+TLS_RSA_WITH_AES_128_CBC_SHA256,
+TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,
+SSL_RSA_WITH_3DES_EDE_CBC_SHA,
+TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA,
+TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+}"/>
+	</Service>
+</Server>

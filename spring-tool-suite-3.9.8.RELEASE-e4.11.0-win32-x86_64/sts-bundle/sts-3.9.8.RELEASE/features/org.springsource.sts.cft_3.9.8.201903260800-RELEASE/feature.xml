@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.springsource.sts.cft"
+      label="%featureName"
+      version="3.9.8.201903260800-RELEASE"
+      provider-name="%providerName"
+      plugin="org.springsource.sts">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseUrl">
+      %license
+   </license>
+
+   <plugin
+         id="org.springsource.sts.cft.branding"
+         download-size="7"
+         install-size="10"
+         version="3.9.8.201903260800-RELEASE"
+         unpack="false"/>
+
+</feature>

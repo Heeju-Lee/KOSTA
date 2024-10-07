@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?compositeMetadataRepository version='1.0.0'?>
+<repository name="Spring Tool Suite 3 Update Site for Eclipse 4.11" type="org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository" version="1.0.0">
+	<properties size="1">
+		<property name="p2.timestamp" value="1243822502502"/>
+	</properties>
+	<children size="2">
+		<child location="https://download.springsource.com/release/TOOLS/update/3.9.9.RELEASE/e4.11/"/>
+	    <child location='https://download.eclipse.org/m2e-wtp/releases/1.4/'/>
+	</children>
+</repository>

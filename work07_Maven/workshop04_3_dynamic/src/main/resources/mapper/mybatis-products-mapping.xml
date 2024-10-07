@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+<mapper namespace="ns.sql.myProductMapper">
+	
+	<insert id="addProduct" parameterType="myProduct">
+		INSERT INTO myproduct(name,maker,price)
+		VALUES(#{name},#{maker},#{price})
+	</insert>
+	
+	<sql id="select-myproduct">
+		SELECT id, name, maker, price
+		FROM myproduct
+	</sql>
+	
+	
+	<!-- 상품명으로 검색 :: LIKE 연산자와 와일드 카드 사용 -->
+<!-- 	<select id="findProducts" parameterType="myProduct" resultType="myProduct">
+		<include refid="select-myproduct"/>
+		
+		<where>
+			<if test="name != null">
+               name LIKE CONCAT('%', #{name}, '%')
+			</if>
+			<if test="maker != null">
+               OR maker LIKE #{maker}
+			</if>
+		</where>
+	</select>	 -->
+	
+	
+	<!-- 동적쿼리 -->
+	<select id="findProducts" parameterType="hashmap" resultType="myProduct">
+		<include refid="select-myproduct"/>
+		
+		<where>
+			<if test="command == 'findProductByName'">
+               name LIKE CONCAT('%', #{word}, '%')
+			</if>
+			<if test="command == 'findProductByMaker'">
+               maker = #{word}
+			</if>
+		</where>
+	</select>	
+</mapper>

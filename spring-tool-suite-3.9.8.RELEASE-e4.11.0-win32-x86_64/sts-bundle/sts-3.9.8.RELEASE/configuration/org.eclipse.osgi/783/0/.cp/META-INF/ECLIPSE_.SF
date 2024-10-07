@@ -1,0 +1,131 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 72dq3b4Q1p1sGMStHvIbMmRIxSKwK
+ AqY99yoqEuE64E=
+SHA-256-Digest-Manifest: XMrQXPxco7hQTDzNWAuq2dh1SvYedakQ3PNctXT1m90=
+Created-By: 1.8.0_162 (Oracle Corporation)
+
+Name: org/objectweb/asm/CurrentFrame.class
+SHA-256-Digest: ui+EHsh6m86x8OpDPceRRJNFW/ZnaJwIAtXyzsGesWw=
+
+Name: org/objectweb/asm/Type.class
+SHA-256-Digest: 82i6JGIVtTnZZrgU9+kNc+7rF0MZkVhRf9djrI9lcZU=
+
+Name: org/objectweb/asm/SymbolTable$Entry.class
+SHA-256-Digest: i0C4V95IV57b2JxFiHTsHoTsAjqT90KV57rkMeg1WdE=
+
+Name: org/objectweb/asm/MethodVisitor.class
+SHA-256-Digest: uFLMQ8Rj8XIXN4jqKHfbgA6srbhU8V+zWWTw8bReNo4=
+
+Name: org/objectweb/asm/AnnotationVisitor.class
+SHA-256-Digest: 7h4cC5s6DNIplSjwN1PTMzr2Fyh2GprLqaeKvlTrLlo=
+
+Name: org/objectweb/asm/Attribute.class
+SHA-256-Digest: 9MeBbGt4QOjUKcGuKG6+/T+woR03NbnZi02fYa0IVYw=
+
+Name: org/objectweb/asm/MethodWriter.class
+SHA-256-Digest: YcZlsrJlzXo9YSjZwySMdAF8i8DeSSVyatJpH5cq2CM=
+
+Name: org/objectweb/asm/Handler.class
+SHA-256-Digest: SrPdqtANMWhUHIUHC7mqTCjuF3X/EKMMAY27Hvv8tcU=
+
+Name: org/objectweb/asm/SymbolTable.class
+SHA-256-Digest: d1SXsxyQY93jagdwZEAF2peeo7qzagA7ZvB3kkUcDe4=
+
+Name: org/objectweb/asm/Constants.class
+SHA-256-Digest: ZsvBCCEjhG9X5qkLLd2ChdOE1vilQt5Gc8z5R4lqync=
+
+Name: org/objectweb/asm/ByteVector.class
+SHA-256-Digest: bwlGA7IqLMFyRo3w5xvs3QdzGPQroMYqlsClZ8moR6c=
+
+Name: org/objectweb/asm/signature/SignatureReader.class
+SHA-256-Digest: G8FJnQDRrJXOBVBDqSvxI8qFIItQeAOCGMpxOSpaZBc=
+
+Name: org/objectweb/asm/ModuleVisitor.class
+SHA-256-Digest: HV2r7T9Qr72vonuD+XS1tbiIci+ZGJGZ6K+l1RlLiBA=
+
+Name: org/objectweb/asm/Opcodes.class
+SHA-256-Digest: jewd4U+kNWne/J9hPvAu5t6dt3MS2pPUcAXK2+FSdr8=
+
+Name: org/objectweb/asm/FieldVisitor.class
+SHA-256-Digest: XqTCZNQm8z6JmpuhHme0gcQiUwuLFjVkJP1pFWvY6Ig=
+
+Name: org/objectweb/asm/MethodTooLargeException.class
+SHA-256-Digest: 10/8qZ8Pw+548wm2spd+BiIJep4E5qJ9Ht767vQaXkA=
+
+Name: org/objectweb/asm/ModuleWriter.class
+SHA-256-Digest: WxRENbGD/mwwk15n43tYK68KqImR3M6RoU5O7X1QxBY=
+
+Name: module-info.class
+SHA-256-Digest: uJgXGpcUEKufBEYPMMehZs9/2UKz494YQdieVb1Hhv8=
+
+Name: org/objectweb/asm/Attribute$Set.class
+SHA-256-Digest: rdN6lcueJHrnh/2K/EQq90BMk65qyff0IJQwGyiH8B8=
+
+Name: org/objectweb/asm/TypePath.class
+SHA-256-Digest: Oy39WvdBjhkABheJ3dCdshapobATEaYKlW9qY82QZ14=
+
+Name: org/objectweb/asm/Label.class
+SHA-256-Digest: m9X8m2YfKaDA2ioikydajavDwrry35yM8Ykv++yCFCQ=
+
+Name: org/objectweb/asm/TypeReference.class
+SHA-256-Digest: IP431I2N2l0Cvx2vORyocBV53X45+vS4zFjoFgzHHCA=
+
+Name: META-INF/maven/org.eclipse.orbit.bundles/org.objectweb.asm/pom.x
+ ml
+SHA-256-Digest: b7/4YyohDg6SO54MSzcBylckROflD/3Vpzoz993y46k=
+
+Name: org/objectweb/asm/Handle.class
+SHA-256-Digest: US38dccpizItxF0OQFR8MkBKeGDfgyoLndc6cpDNSoc=
+
+Name: org/objectweb/asm/AnnotationWriter.class
+SHA-256-Digest: c9sBasB7z/6Dpme6S6d2JvZL+9JZM69FFH1Mg4Lx7lQ=
+
+Name: org/objectweb/asm/ClassVisitor.class
+SHA-256-Digest: tm5Q6NytfACrJh2y9CGKJBir6yc3l22iITLUvK38sM4=
+
+Name: org/objectweb/asm/ConstantDynamic.class
+SHA-256-Digest: oGB9JbsbvhSxNLAQeXgCgr8Olp0/PJHf1y7r7UyJ3UU=
+
+Name: org/objectweb/asm/ClassWriter.class
+SHA-256-Digest: N0clmRcMsV3gKNIPJHPqq6uUZ1gl0tdYfSNpTlsglhM=
+
+Name: META-INF/maven/org.eclipse.orbit.bundles/org.objectweb.asm/pom.p
+ roperties
+SHA-256-Digest: KYfmX8AF7Mdc5c1osNmiik3UBp66lJZ/ZPDBrTZYifY=
+
+Name: about_files/LICENSE.txt
+SHA-256-Digest: 7ob1rSXTgfq9i3PrfU+aq6L490kND6LcjKVO3QGFNGY=
+
+Name: about.html
+SHA-256-Digest: /+60XwO4h22UQw3HizOsztJwhQWPc1DfaSLBZOZgKbA=
+
+Name: org/objectweb/asm/FieldWriter.class
+SHA-256-Digest: BOlpymjdY3OXYk5xk9iYnA5d8kVI5SQ8BDgwWV51Qp8=
+
+Name: org/objectweb/asm/signature/SignatureWriter.class
+SHA-256-Digest: mKEwxGPz/YZt8tI0dN170AqVNFhoEhVyLDHx4sk/zOo=
+
+Name: org/objectweb/asm/Edge.class
+SHA-256-Digest: 3SuxgbnPMD/0orpaXQXuyR9j3VBR9FEq6u+C/pP26Rk=
+
+Name: org/objectweb/asm/Frame.class
+SHA-256-Digest: 7O657jVtj0fzpMWlVOSAUx+AQxURHgQQ0glWc+cF2zE=
+
+Name: org/objectweb/asm/Context.class
+SHA-256-Digest: yMEGusH7ZKmfKhjosRp4dcb7hT7U5RjhGC1Qad3yvtQ=
+
+Name: org/objectweb/asm/ClassReader.class
+SHA-256-Digest: M1+XTwk4MwqNTmigHLPhw/Wj2N7Bs++mUg1Cr6OTS7Q=
+
+Name: org/objectweb/asm/ClassTooLargeException.class
+SHA-256-Digest: mkzamyTDYprhjILwqwsY/uOTq4tm3xRG1PFgDEO9FDY=
+
+Name: org/objectweb/asm/Symbol.class
+SHA-256-Digest: qCCUN3fP/znx5Qzmn5s+PMp8yYObFRa6V0/Ibk6Ewf8=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA-256-Digest: c9GcNI23DWAYMb1+9BWmZkQ1GJaTLYzEaTitqxNqsgQ=
+
+Name: org/objectweb/asm/signature/SignatureVisitor.class
+SHA-256-Digest: ODBOGonop0vOlSy0ThjC5s2/0ZE4wMM52O1jB96x+Mc=
+

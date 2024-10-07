@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+<mapper namespace="ns.sql.Board">
+
+	<!-- 게시글 등록...no는 자동완성 ... board...id(member의 컬럼)-->
+	<insert id="write" parameterType="board" useGeneratedKeys="true" keyProperty="no">
+		INSERT INTO 
+			springboard (title, content, w_date, id)
+		VALUES (#{title}, #{content}, curdate(), #{member.id})
+	</insert>
+
+	<!--   특정 게시글이 입력된 날짜를 디비에서 받아오는 쿼리문..-->
+	<select id="selectByNoForDate" parameterType="int" resultType="String">
+		SELECT w_date 
+		FROM springboard
+		WHERE no = #{VALUE}
+	</select>
+	
+	<resultMap id="boardListRM" type="board">
+		<id property="no" column="no"/>
+		<result property="title" column="title"/>
+<!-- 		<result property="content" column="content"/> 전체게시물 볼 때 필요없는 항목-->
+		<result property="count" column="count"/>
+		<result property="writeDate" column="w_date"/>
+		<association property="member" javaType="member">
+			<id property="id" column="id"/>
+			<result property="name" column="name"/>
+			<result property="password" column="password"/>
+			<result property="address" column="address"/>
+		</association>
+	</resultMap> 
+		
+	<!-- 전체 게시물 보기 -->
+	<select id="getBoardList" resultMap="boardListRM">
+		SELECT b.no, b.title, b.count, b.w_date, m.name
+		FROM springboard b, member m
+		WHERE b.id = m.id
+		ORDER BY b.no DESC
+	</select>
+	
+	<!-- 상세보기 resultMap extends-->
+	<resultMap type="board" id="boardRM" extends="boardListRM">
+		<result property="content" column="content"/> 
+		<result property="member.id" column="id"/><!-- member의 id -->
+	</resultMap>
+	
+	<!-- 특정 게시글 상세 보기 :: (필수) content, id (pk로 권한 부여하기 위해서) -->
+	<select id="showContent" resultMap="boardRM" parameterType="int">
+		SELECT
+		b.no, b.title, b.count, b.w_date, b.content, b.id, m.name 
+		FROM springboard b, member m
+		WHERE b.id = m.id
+		AND 
+		no = #{VALUE}
+		ORDER BY b.no DESC	
+	</select> 
+	
+	<delete id="deleteBoard" parameterType="int">	
+		DELETE FROM springboard WHERE no=#{VALUE}
+	</delete>
+	<update id="updateCount" parameterType="int">
+		UPDATE springboard SET count = count+1 WHERE no=#{VALUE}	
+	</update> 
+	<update id="updateBoard" parameterType="board">
+		UPDATE springboard SET title=#{title}, content=#{content}
+		WHERE no=#{no}
+	</update>
+
+</mapper>
