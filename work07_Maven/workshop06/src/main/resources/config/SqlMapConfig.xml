@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>	
+	<properties resource="config/dbconn.properties"/>
+
+	<typeAliases>
+		<package name="com.service.spring.domain"/><!-- Alias :: company, phone, userInfo -->
+	</typeAliases>
+	
+	<environments default="aa">
+	<environment id="aa">
+		<transactionManager type="JDBC"/>
+		<dataSource type="UNPOOLED">
+			<property name="driver" value="${jdbc.mysql.driver}"/>
+			<property name="url" value="${jdbc.mysql.url}"/>
+			<property name="username" value="${jdbc.mysql.username}"/>
+			<property name="password" value="${jdbc.mysql.password}"/>
+		</dataSource>
+	</environment>
+</environments>
+
+	<mappers>
+		<mapper resource="mapper/phone_query.xml"/>
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
