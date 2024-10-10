@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="addProduct">
+		<form action="add" method="post">
+			<ul>
+				<li>상품명 : <input type="text"></li>
+				<li>제조사 : <input type="text"></li>
+				<li>가격 : <input type="text"></li>
+			</ul>
+			<input type="submit" value="상품등록">
+		</form>
+	</div>
+
+	<div id="findProduct">
+		<h2>상품명(제조사별)검색하기</h2>
+			<form action="find.do" method="post">
+				<select>
+					<option value="name">상품명으로 검색</option>
+					<option value="maker">제조사명으로 검색</option>
+				</select>
+				<input type="text">
+				<input type="submit" value="상품검색">
+			</form>
+	</div>
+</body>
+</html>
