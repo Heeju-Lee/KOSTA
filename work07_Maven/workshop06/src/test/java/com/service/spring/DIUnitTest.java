@@ -31,7 +31,7 @@ public class DIUnitTest {
 		PhoneService service = (PhoneService) factory.getBean("phoneService");
 		
 		Phone phone = null;
-		List<Phone> list = service.select(phone);
+		List<Phone> list = service.select();
 		list.forEach(c->System.out.println(c));
 	}
 	
@@ -39,7 +39,7 @@ public class DIUnitTest {
 	public void delete() throws Exception{
 		PhoneService service = (PhoneService) factory.getBean("phoneService");
 		
-		List<Phone> list = new ArrayList<Phone>();
+		List<String> list = new ArrayList<String>();
 //		list.add("V50SQ","",0,"");
 //		list.add("S105G","",0,"");
 		

@@ -23,15 +23,19 @@ public class PhoneDAO {
 		return sqlSession.insert(NS+"insert",phone);
 	}
 	
-	public List<Phone> select(Phone phone){
-		return sqlSession.selectList(NS+"select",phone);
+	public List<Phone> select(){
+		return sqlSession.selectList(NS+"select");
+	}
+	
+	public Phone select(Phone phone){
+		return sqlSession.selectOne(NS+"select",phone);
 	}
 	
 	public UserInfo selectUser(UserInfo userInfo){
 		return sqlSession.selectOne(NS+"selectUser", userInfo);
 	}
 	
-	public int delete(List<Phone> list) {
+	public int delete(List<String> list) {
 		return sqlSession.delete(NS+"delete",list);
 	}
 	

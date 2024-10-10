@@ -29,7 +29,7 @@ function Login(){
 			<TR><TD align=center>
 			<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=400 HEIGHT=180>
 				<TR>
-				<TD WIDTH=107><IMG SRC="images/book.png"  BORDER=0></TD>
+				<TD WIDTH=107><IMG SRC="images/book.bmp"  BORDER=0></TD>
 				<TD WIDTH=281 HEIGHT=150>
 							<!-- 로그인 입력창 시작 -->
 

@@ -22,7 +22,6 @@
 		    </init-param>
 		    <load-on-startup>1</load-on-startup>
 	  </servlet>
-
 		
 	<!-- / 클라이언트가 요청하면 DispatcherServlet이 요청을 처리한다는 뜻이다. -->	
 	<servlet-mapping>
@@ -40,6 +39,7 @@
 		<url-pattern>*.ico</url-pattern>
 		<url-pattern>*.swf</url-pattern>
 		<url-pattern>*.mp3</url-pattern>
+		<url-pattern>*.bmp</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 한글처리  -->

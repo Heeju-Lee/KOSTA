@@ -47,8 +47,8 @@
 	<delete id="delete" parameterType="list">	
 		DELETE FROM phones
 		WHERE num IN
-		<foreach collection="list" item="phone" separator="," open="(" close=")">
-			#{phone.num}
+		<foreach collection="list" item="num" separator="," open="(" close=")">
+			#{num}
 		</foreach>
 	</delete>
 
