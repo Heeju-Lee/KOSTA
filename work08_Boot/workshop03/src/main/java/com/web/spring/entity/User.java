@@ -42,7 +42,7 @@ public class User {
 	@JoinTable(name="orders", 
 			   joinColumns = @JoinColumn(name="user_id"), 
 			   inverseJoinColumns = @JoinColumn(name="pro_no"))
-	Set<Product> Products = new HashSet<>();S
+	Set<Product> Products = new HashSet<>();
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + "]";
