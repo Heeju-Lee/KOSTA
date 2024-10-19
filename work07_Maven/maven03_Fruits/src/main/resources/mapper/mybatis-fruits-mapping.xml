@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+<mapper namespace="ns.sql.FruitsMapper">
+	<resultMap type="item" id="selectItemRM">
+		<result property="itemNumber" column="item_id"/>
+		<result property="name" column="item_name"/>
+		<result property="price" column="price"/>
+		<result property="description" column="description"/>
+		<result property="url" column="picture_url"/>
+		<result property="count" column="count"/>			
+	</resultMap>
+	
+	<sql id="select-item">
+		SELECT 
+		item_id, item_name, price, description, picture_url
+		FROM item	
+	</sql>	
+	
+	<select id="getItemList" resultMap="selectItemRM">
+		<include refid="select-item"/>	
+	</select>
+	
+	<select id="getItem" parameterType="int" resultMap="selectItemRM">
+		<include refid="select-item"/>
+		WHERE item_id=#{VALUE}
+	</select>
+		
+</mapper>
