@@ -14,7 +14,7 @@ function App() {
   //상태값으로 처리해야한다. useState()
   let locations = ["인도", "라오스", "마다가스카르", "스페인", "하와이"]
   let [loc, setLoc] = useState(['Best Like Trip~~!!',locations]);
-  let [likes, setLikes] = useState([0,0,0,0,0]);
+  let [likes, setLikes] = useState(new Array(locations.length).fill(0));
 
   return (
     <div className="App">

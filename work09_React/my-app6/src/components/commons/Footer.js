@@ -9,6 +9,7 @@ const StyledFooter = styled.div`
     list-style: none;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-top: 30px;
 `
 
 const Footer = () => {
