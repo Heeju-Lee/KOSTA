@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+a{
+  padding: 30px;
+  font-size: 1.5em;
+  color: darksalmon;
+}
+
+ul>li>a{
+  color: darksalmon;
+}
+
+.active{
+  background-color: bisque;
+  border-radius: 65px;
+}

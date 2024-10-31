@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+body{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav{
+  background-color: darkblue;
+  width: 860px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  color: beige;
+  padding: 20px;
+  font-weight: 600px;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+h3{
+  color: crimson;
+}
+
+.list{
+  margin-top: 30px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+hr{
+  width: 700px;
+  text-align: center;
+}

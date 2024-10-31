@@ -1,0 +1,25 @@
+.content{
+  text-align: center;
+}
+
+.content>nav>ol{
+  text-align: left;
+}
+
+.content>nav>ol{
+  display: inline-block;
+}
+
+.images{
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.images>img{
+  margin: 10px;
+  border-radius: 10px;
+  border: solid navy 4px;
+}

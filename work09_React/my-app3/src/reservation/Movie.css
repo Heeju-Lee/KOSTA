@@ -1,0 +1,12 @@
+.container{
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: solid black 3px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.title{
+    color: rgb(163, 110, 212);
+}

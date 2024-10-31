@@ -1,0 +1,23 @@
+.wrapper{
+    margin: 8px;
+    padding: 8px;
+    display: flex;
+    border: 2px solid cadetblue;
+    border-radius: 16px;
+    width: 500px;
+}
+.writer{
+    font-weight: bold;
+    color:mediumslateblue;
+}
+.content{
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+span{
+    color: black;
+    font-size: 16px;
+    display: block;
+}
