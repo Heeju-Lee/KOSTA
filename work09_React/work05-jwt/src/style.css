@@ -1,0 +1,7 @@
+
+#root > div > div > nav > div > div {
+    align-items: center;
+    vertical-align: middle; 
+    color: white;
+    font-size: 16px;
+ }

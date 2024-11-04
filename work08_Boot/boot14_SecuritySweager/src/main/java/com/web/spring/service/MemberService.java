@@ -41,8 +41,8 @@ public class MemberService {
 	public String duplicateCheck(String id) {
 		Member rMember=memberRepository.duplicateCheck(id);
 		log.info("rMember ==> { }",rMember);
-		if(rMember==null || rMember.equals("")) return "아이디 사용 사능!!";
-		else return "아이디 사용 불가!!";
+		if(rMember==null || rMember.equals("")) return "사용가능합니다.";
+		else return "중복입니다.";
 	}
 }
 
